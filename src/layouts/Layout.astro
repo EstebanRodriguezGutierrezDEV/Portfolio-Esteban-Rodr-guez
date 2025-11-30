@@ -1,0 +1,60 @@
+---
+import "../styles/global.css";
+import ParticlesBackground from "../components/ParticlesBackground.astro";
+import SEO from "../components/SEO.astro";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="md:cursor-none">
+	<head>
+		<SEO title={title} description={description} />
+	</head>
+	<body
+		class="bg-slate-200 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex items-start justify-center transition-colors duration-300 p-4 py-10"
+	>
+		<ParticlesBackground />
+		<div class="relative z-10 w-full flex justify-center">
+			<slot />
+		</div>
+
+		<div
+			id="custom-cursor"
+			class="fixed top-0 left-0 w-5 h-5 bg-slate-500/30 dark:bg-slate-400/30 rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out hidden md:block backdrop-blur-sm border border-white/10"
+		>
+		</div>
+
+		<script>
+			const cursor = document.getElementById("custom-cursor");
+
+			if (cursor) {
+				document.addEventListener("mousemove", (e) => {
+					cursor.style.left = e.clientX + "px";
+					cursor.style.top = e.clientY + "px";
+				});
+
+				document.addEventListener("mousedown", () => {
+					cursor.classList.add("scale-75");
+				});
+
+				document.addEventListener("mouseup", () => {
+					cursor.classList.remove("scale-75");
+				});
+			}
+		</script>
+
+		<style is:global>
+			@media (min-width: 768px) {
+				* {
+					cursor: none !important;
+				}
+			}
+		</style>
+	</body>
+</html>

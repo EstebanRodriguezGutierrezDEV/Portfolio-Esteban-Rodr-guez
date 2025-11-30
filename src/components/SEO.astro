@@ -1,0 +1,65 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    image?: string;
+    url?: string;
+}
+
+const {
+    title,
+    description,
+    image = "/assets/icono.png", 
+    url = "https://estebanrodriguez.dev", 
+} = Astro.props;
+
+const siteUrl = new URL(url, Astro.site);
+const imageUrl = new URL(image, Astro.site || siteUrl);
+
+const jsonLD = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Esteban Rodríguez Gutiérrez",
+    url: siteUrl,
+    image: imageUrl,
+    jobTitle: "Desarrollador Web Junior & Full Stack",
+    worksFor: {
+        "@type": "Organization",
+        name: "Freelance",
+    },
+    sameAs: [
+        "https://www.linkedin.com/in/esteban-rodríguez-gutiérrez-492153202/",
+        "https://github.com/EstebanRodriguezGutierrezDEV",
+        "https://www.instagram.com/_esteban_rg/",
+    ],
+    description: description,
+};
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="author" content="Esteban Rodríguez Gutiérrez" />
+<meta
+    name="keywords"
+    content="Portfolio, Desarrollador Web, Full Stack, Frontend, Backend, Java, Python, Wordpress, MongoDB, Node.js, HTML, CSS, JavaScript, TypeScript, Git, GitHub, Linux, PHP, Figma, Astro, React, Tailwind, España, Toledo, Junior Developer"
+/>
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={siteUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageUrl} />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={siteUrl} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={imageUrl} />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />

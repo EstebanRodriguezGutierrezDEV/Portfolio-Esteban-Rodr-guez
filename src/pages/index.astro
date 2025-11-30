@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProfileCard from "../components/ProfileCard.astro";
+import SkillsCard from "../components/SkillsCard.astro";
+import Experience from "../components/Experience.astro";
+import ProjectsCard from "../components/ProjectsCard.astro";
+---
+
+<Layout
+	title="Esteban Rodríguez - Portfolio Desarrollador Web Full Stack"
+	description="Portfolio de Esteban Rodríguez, Desarrollador Web Junior y Multiplataforma. Especialista en Java, Astro, React, Tailwind y automatización con IA. Descubre mis proyectos y experiencia."
+>
+	<main
+		class="flex flex-col md:flex-row gap-6 items-start justify-center w-full mx-auto"
+	>
+		<ProfileCard />
+		<div class="flex flex-col gap-6 w-full">
+			<Experience />
+			<ProjectsCard />
+			<SkillsCard />
+		</div>
+	</main>
+</Layout>

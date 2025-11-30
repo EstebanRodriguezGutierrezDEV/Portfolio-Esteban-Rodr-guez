@@ -1,0 +1,73 @@
+---
+const experiences = [
+  {
+    id: "job1",
+    title: "Desarrollador Web Junior",
+    company: "Freelance",
+    date: "2025 - Presente",
+    description:
+      "Desarrollo de aplicaciones web y sitios corporativos utilizando tecnologías modernas como Astro, React y Tailwind CSS.",
+  },
+  {
+    id: "job2",
+    title: "Prácticas de Desarrollo Web",
+    company: "Get brit!",
+    date: "2024",
+    description:
+      "Durante mi período en Get brit!, participé activamente en diferentes áreas del desarrollo tecnológico de la empresa. Colaboré en la implementación de nuevas funcionalidades en el backend, contribuyendo a mejorar el rendimiento y la eficiencia de los sistemas internos. Asimismo, realicé tareas de mantenimiento y gestión de bases de datos, garantizando su correcto funcionamiento y optimización. También tuve la oportunidad de involucrarme en el diseño y desarrollo de interfaces de usuario, aportando soluciones centradas en la experiencia del usuario. Además, llevé a cabo la creación desde cero de una de las páginas web de la empresa, responsabilizándome tanto de su estructura como de su diseño y funcionamiento. Finalmente, participé en el mantenimiento general de las diferentes webs de la compañía, asegurando su actualización y correcto rendimiento.",
+  },
+];
+---
+
+<div
+  class="group/card bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-6 sm:p-8 w-full flex flex-col gap-6 transition-all duration-300 h-fit grayscale hover:grayscale-0 hover:scale-[1.02]"
+>
+  <h2
+    class="text-2xl font-bold text-slate-800 dark:text-slate-100 text-center sm:text-left relative w-fit mx-auto sm:mx-0 after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 group-hover/card:after:scale-x-100 after:transition after:duration-300 after:origin-center"
+    data-i18n="experience.title"
+  >
+    Experiencia
+  </h2>
+
+  <div class="flex flex-col gap-8 relative">
+    <div
+      class="absolute left-5 top-2 bottom-2 w-0.5 bg-slate-200 dark:bg-slate-700"
+    >
+    </div>
+
+    {
+      experiences.map((exp) => (
+        <div class="relative pl-12">
+          <div class="absolute left-[11px] top-2 w-3 h-3 rounded-full bg-slate-400 dark:bg-slate-500 border-4 border-slate-50 dark:border-slate-900 box-content" />
+
+          <div class="flex flex-col gap-1">
+            <span
+              class="text-sm font-mono text-slate-500 dark:text-slate-400"
+              data-i18n={`experience.${exp.id}.date`}
+            >
+              {exp.date}
+            </span>
+            <h3
+              class="text-lg font-bold text-slate-800 dark:text-slate-100"
+              data-i18n={`experience.${exp.id}.title`}
+            >
+              {exp.title}
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-300 font-medium"
+              data-i18n={`experience.${exp.id}.company`}
+            >
+              {exp.company}
+            </p>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-sm mt-2 leading-relaxed"
+              data-i18n={`experience.${exp.id}.description`}
+            >
+              {exp.description}
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

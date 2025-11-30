@@ -1,0 +1,42 @@
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# jetbrains setting folder
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Environment Variables (All)
+.env*
+!.env.example
+
+# Misc
+*.log
+*.tmp
+*.temp
+*.swp
+.DS_Store
