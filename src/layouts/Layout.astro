@@ -47,6 +47,20 @@ const { title, description } = Astro.props;
 					cursor.classList.remove("scale-75");
 				});
 			}
+
+			// Toggle grayscale mode based on window width
+			function handleGrayscale() {
+				const isLargeScreen = window.innerWidth > 1200;
+				if (isLargeScreen) {
+					document.body.classList.add("grayscale-mode");
+				} else {
+					document.body.classList.remove("grayscale-mode");
+				}
+			}
+
+			window.addEventListener("resize", handleGrayscale);
+			window.addEventListener("DOMContentLoaded", handleGrayscale);
+			handleGrayscale(); // Run immediately
 		</script>
 
 		<style is:global>
@@ -54,6 +68,15 @@ const { title, description } = Astro.props;
 				* {
 					cursor: none !important;
 				}
+			}
+
+			/* Grayscale Mode Styles */
+			body.grayscale-mode .group\/card {
+				filter: grayscale(100%);
+			}
+
+			body.grayscale-mode .group\/card:hover {
+				filter: grayscale(0%);
 			}
 		</style>
 	</body>
