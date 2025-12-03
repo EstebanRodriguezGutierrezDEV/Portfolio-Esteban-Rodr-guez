@@ -1,5 +1,8 @@
 ---
 import javaIcon from "../assets/images/java.png";
+import n8nIcon from "../assets/images/n8n.svg";
+import tursoIcon from "../assets/images/turso.svg";
+import copilotIcon from "../assets/images/githubcopilot.svg";
 
 const skillCategories = [
     {
@@ -28,12 +31,20 @@ const skillCategories = [
         ],
     },
     {
+        title: "Móvil",
+        key: "skills.mobile",
+        skills: [
+            { name: "Android", icon: "android" },
+            { name: "Kotlin", icon: "kotlin" },
+        ],
+    },
+    {
         title: "Bases de Datos",
         key: "skills.database",
         skills: [
             { name: "MySQL", icon: "mysql" },
             { name: "MongoDB", icon: "mongodb" },
-            { name: "Turso", icon: "turso", type: "simple" },
+            { name: "Turso", src: tursoIcon.src },
         ],
     },
     {
@@ -44,7 +55,11 @@ const skillCategories = [
             { name: "Docker", icon: "docker" },
             { name: "Linux", icon: "linux" },
             { name: "Figma", icon: "figma" },
-            { name: "n8n", icon: "n8n", type: "simple" },
+            { name: "VS Code", icon: "vscode" },
+            { name: "Vite", icon: "vitejs" },
+            { name: "GitHub", icon: "github" },
+            { name: "GitHub Copilot", src: copilotIcon.src },
+            { name: "n8n", src: n8nIcon.src },
             { name: "Google Analytics", icon: "google" },
         ],
     },
