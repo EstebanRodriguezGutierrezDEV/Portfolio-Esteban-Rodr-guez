@@ -4,6 +4,7 @@ import ProfileCard from "../components/ProfileCard.astro";
 import SkillsCard from "../components/SkillsCard.astro";
 import Experience from "../components/Experience.astro";
 import ProjectsCard from "../components/ProjectsCard.astro";
+import CertificationsCard from "../components/CertificationsCard.astro";
 ---
 
 <Layout
@@ -15,8 +16,8 @@ import ProjectsCard from "../components/ProjectsCard.astro";
 	>
 		<ProfileCard />
 		<div class="flex flex-col gap-6 w-full">
+			<CertificationsCard />
 			<Experience />
-			<ProjectsCard />
 			<SkillsCard />
 		</div>
 	</main>

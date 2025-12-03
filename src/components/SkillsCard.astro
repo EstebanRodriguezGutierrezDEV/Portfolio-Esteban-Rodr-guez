@@ -1,72 +1,125 @@
 ---
 import javaIcon from "../assets/images/java.png";
 
-const skills = [
-    { name: "Java", src: javaIcon.src },
-    { name: "React", icon: "react" },
-    { name: "HTML", icon: "html5" },
-    { name: "CSS", icon: "css3" },
-    { name: "Tailwind", icon: "tailwindcss" },
-    { name: "Node.js", icon: "nodejs" },
-    { name: "TypeScript", icon: "typescript" },
-    { name: "MySQL", icon: "mysql" },
-    { name: "Python", icon: "python" },
-    { name: "Bootstrap", icon: "bootstrap" },
-    { name: "JavaScript", icon: "javascript" },
-    { name: "Turso", icon: "turso", type: "simple" },
-    { name: "Astro", icon: "astro" },
-    { name: "Linux", icon: "linux" },
-    { name: "MongoDB", icon: "mongodb" },
-    { name: "Git", icon: "git" },
-    { name: "Wordpress", icon: "wordpress" },
-    { name: "Docker", icon: "docker" },
-    { name: "Figma", icon: "figma" },
-    { name: "PHP", icon: "php" },
-    { name: "n8n", icon: "n8n", type: "simple" },
-    { name: "Google Analytics", icon: "google" },
+const skillCategories = [
+    {
+        title: "Frontend",
+        key: "skills.frontend",
+        skills: [
+            { name: "HTML", icon: "html5" },
+            { name: "CSS", icon: "css3" },
+            { name: "JavaScript", icon: "javascript" },
+            { name: "TypeScript", icon: "typescript" },
+            { name: "React", icon: "react" },
+            { name: "Astro", icon: "astro" },
+            { name: "Tailwind", icon: "tailwindcss" },
+            { name: "Bootstrap", icon: "bootstrap" },
+        ],
+    },
+    {
+        title: "Backend",
+        key: "skills.backend",
+        skills: [
+            { name: "Java", src: javaIcon.src },
+            { name: "Python", icon: "python" },
+            { name: "Node.js", icon: "nodejs" },
+            { name: "PHP", icon: "php" },
+            { name: "Wordpress", icon: "wordpress" },
+        ],
+    },
+    {
+        title: "Bases de Datos",
+        key: "skills.database",
+        skills: [
+            { name: "MySQL", icon: "mysql" },
+            { name: "MongoDB", icon: "mongodb" },
+            { name: "Turso", icon: "turso", type: "simple" },
+        ],
+    },
+    {
+        title: "Herramientas",
+        key: "skills.tools",
+        skills: [
+            { name: "Git", icon: "git" },
+            { name: "Docker", icon: "docker" },
+            { name: "Linux", icon: "linux" },
+            { name: "Figma", icon: "figma" },
+            { name: "n8n", icon: "n8n", type: "simple" },
+            { name: "Google Analytics", icon: "google" },
+        ],
+    },
 ];
 ---
 
 <div
-    class="group/card bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-6 sm:p-8 w-full flex flex-col gap-6 transition-all duration-300 h-fit hover:scale-[1.02]"
+    class="group/card bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-6 sm:p-8 w-full flex flex-col gap-8 transition-all duration-300 h-fit hover:scale-[1.02]"
 >
     <h2
-        class="text-2xl font-bold text-slate-800 dark:text-slate-100 text-center sm:text-left relative w-fit mx-auto sm:mx-0 after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 group-hover/card:after:scale-x-100 after:transition after:duration-300 after:origin-center"
+        class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent text-center sm:text-left relative w-fit mx-auto sm:mx-0"
         data-i18n="skills.title"
     >
         Habilidades
     </h2>
 
-    <div
-        class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-6 gap-4 justify-items-center"
-    >
+    <div class="flex flex-col gap-8">
         {
-            skills.map((skill) => (
-                <div class="relative w-12 h-12 group hover:z-50">
-                    <div class="flex items-center justify-center bg-white dark:bg-slate-800 rounded-2xl p-2 shadow-sm h-12 w-12 transition-all duration-300 hover:scale-110 cursor-default">
-                        <img
-                            src={
-                                skill.src
-                                    ? skill.src
-                                    : skill.type === "simple"
-                                      ? `https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${skill.icon}.svg`
-                                      : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}/${skill.icon}-original.svg`
-                            }
-                            alt={skill.name}
-                            class="w-8 h-8 shrink-0 object-contain"
-                            title={skill.name}
-                            loading="lazy"
-                            onerror="this.style.display='none'"
-                        />
+            skillCategories.map((category, categoryIndex) => (
+                <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 border-b border-slate-200 dark:border-slate-700 pb-6 last:border-0 last:pb-0">
+                    <h3
+                        class="text-lg font-semibold text-slate-700 dark:text-slate-300 md:w-32 shrink-0"
+                        data-i18n={category.key}
+                    >
+                        {category.title}
+                    </h3>
+                    <div class="flex flex-wrap gap-4">
+                        {category.skills.map((skill, skillIndex) => (
+                            <div
+                                class="relative w-12 h-12 group hover:z-50 animate-pop-in"
+                                style={`animation-delay: ${categoryIndex * 100 + skillIndex * 50}ms`}
+                            >
+                                <div class="flex items-center justify-center bg-white dark:bg-slate-800 rounded-2xl p-2 shadow-sm h-12 w-12 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] cursor-default border border-transparent hover:border-blue-200 dark:hover:border-blue-800">
+                                    <img
+                                        src={
+                                            skill.src
+                                                ? skill.src
+                                                : skill.type === "simple"
+                                                  ? `https://cdn.simpleicons.org/${skill.icon}`
+                                                  : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}/${skill.icon}-original.svg`
+                                        }
+                                        alt={skill.name}
+                                        class="w-8 h-8 shrink-0 object-contain"
+                                        title={skill.name}
+                                        loading="lazy"
+                                        onerror="this.style.display='none'"
+                                    />
+                                </div>
+                                <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-slate-800 dark:bg-slate-100 text-white dark:text-slate-900 text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-lg after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-slate-800 dark:after:border-t-slate-100">
+                                    {skill.name}
+                                </span>
+                            </div>
+                        ))}
                     </div>
-                    <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-slate-800 dark:bg-slate-100 text-white dark:text-slate-900 text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-lg after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-slate-800 dark:after:border-t-slate-100">
-                        {skill.name}
-                    </span>
                 </div>
             ))
         }
     </div>
 </div>
+
+<style>
+    @keyframes pop-in {
+        0% {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    .animate-pop-in {
+        animation: pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
+    }
+</style>
 
 <script>
     import { translations } from "../scripts/language";
