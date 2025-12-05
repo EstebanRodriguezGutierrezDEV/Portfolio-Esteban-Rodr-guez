@@ -1,33 +1,1038 @@
 ---
-
+import UserPhoto from "../assets/images/Yo.png";
+import AppLogo from "../assets/images/AppLogoNew.jpg";
+import MyMenuPreview from "../assets/images/MyMenuPreview.png";
 ---
 
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css"
+/>
 <div
-    class="group/card bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-6 sm:p-8 w-full flex flex-col gap-6 transition-all duration-300 h-fit hover:scale-[1.02]"
+    class="group/card w-full h-fit transition-all duration-300 hover:scale-[1.01]"
 >
-    <h2
-        class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent text-center sm:text-left relative w-fit mx-auto sm:mx-0"
-        data-i18n="projects.title"
+    <!-- macOS Monitor/Screen Container -->
+    <div
+        class="relative w-full h-[600px] sm:h-[700px] bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl"
     >
-        Proyectos
-    </h2>
-
-    <div class="flex flex-col items-center justify-center gap-4 w-full">
-        <script
-            src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
-            type="module"></script>
-
-        <dotlottie-wc
-            src="https://lottie.host/821a1e07-0112-4638-bdd9-1becaa64496b/eYbJDss0id.lottie"
-            style="width: 300px;height: 300px"
-            autoplay
-            loop></dotlottie-wc>
-
-        <p
-            class="text-slate-600 dark:text-slate-400 font-mono text-lg text-center"
-            data-i18n="projects.wip"
+        <!-- Mesh Gradient Background -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-400/30 dark:bg-blue-600/20 rounded-full blur-[100px] animate-pulse"
+            >
+            </div>
+            <div
+                class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-400/30 dark:bg-indigo-600/20 rounded-full blur-[100px] animate-pulse delay-1000"
+            >
+            </div>
+            <div
+                class="absolute top-[20%] right-[10%] w-[40%] h-[40%] bg-cyan-400/20 dark:bg-cyan-600/10 rounded-full blur-[80px] animate-pulse delay-700"
+            >
+            </div>
+        </div>
+        <!-- Background Typography -->
+        <div
+            class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0 opacity-10"
         >
-            Estamos trabajando en ello
-        </p>
+            <h1
+                class="text-9xl font-black text-black dark:text-white tracking-tighter uppercase leading-none"
+            >
+                Proyectos
+            </h1>
+            <h2
+                class="text-8xl font-black text-black dark:text-white tracking-tighter uppercase leading-none"
+            >
+                Esteban
+            </h2>
+        </div>
+
+        <div
+            class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"
+        >
+        </div>
+        <div
+            class="absolute top-0 left-0 right-0 h-7 bg-slate-900/40 dark:bg-black/40 backdrop-blur-md flex items-center justify-between px-4 z-50 text-white shadow-sm font-medium text-xs select-none"
+        >
+            <div class="flex items-center gap-4">
+                <img
+                    src={UserPhoto.src}
+                    alt="User"
+                    class="w-4 h-4 rounded-full object-cover shadow-sm"
+                />
+                <span class="font-bold" data-i18n="projects.topbar.title"
+                    >Proyectos Esteban</span
+                >
+            </div>
+            <div class="flex items-center gap-4">
+                <svg
+                    class="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    ></path></svg
+                >
+                <!-- Control Center Icon -->
+                <svg
+                    class="w-4 h-4 text-white"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    ><path
+                        d="M4 6h16M4 12h16m-7 6h7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                >
+                <!-- Day/Time -->
+                <span id="mac-clock">Fri 5 Dec 14:30</span>
+            </div>
+        </div>
+
+        <script>
+            function updateClock() {
+                const clockElement = document.getElementById("mac-clock");
+                if (clockElement) {
+                    const now = new Date();
+                    const options: Intl.DateTimeFormatOptions = {
+                        weekday: "short",
+                        day: "numeric",
+                        month: "short",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: false,
+                    };
+                    // Format like: Fri 5 Dec 14:30
+                    // Note: toLocaleString might vary by locale, manually building for specific format if needed,
+                    // but standard 'en-GB' or similar often gives close to "Fri 5 Dec, 14:30"
+                    const timeString = now
+                        .toLocaleString("en-GB", options)
+                        .replace(",", "");
+                    clockElement.textContent = timeString;
+                }
+            }
+
+            // Update immediately and then every minute
+            updateClock();
+            setInterval(updateClock, 1000);
+        </script>
+
+        <!-- Floating Finder Window -->
+        <div
+            id="finder-window"
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[90%] sm:w-[80%] h-[65%] bg-slate-50 dark:bg-[#1e1e1e] rounded-xl overflow-hidden shadow-2xl border border-white/20 dark:border-black ring-1 ring-black/10 flex flex-col transition-all duration-300 ease-in-out scale-90 opacity-0 pointer-events-none"
+        >
+            <!-- Title Bar -->
+            <div
+                id="window-titlebar"
+                class="h-10 bg-[#f3f3f3] dark:bg-[#2A2A2A] flex items-center px-4 justify-between border-b border-slate-300 dark:border-black shrink-0 relative cursor-default"
+                ondblclick="toggleMaximize()"
+            >
+                <!-- Traffic Lights -->
+                <div class="flex gap-2 w-16 group/lights">
+                    <div
+                        id="btn-close"
+                        class="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E] shadow-sm flex items-center justify-center cursor-pointer hover:bg-[#FF5F56]/80 text-[#4e0002] opacity-100"
+                        onclick="closeWindow()"
+                    >
+                        <svg
+                            class="w-2 h-2 opacity-0 group-hover/lights:opacity-100"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="3"
+                                d="M6 18L18 6M6 6l12 12"></path></svg
+                        >
+                    </div>
+                    <div
+                        id="btn-minimize"
+                        class="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123] shadow-sm flex items-center justify-center cursor-pointer hover:bg-[#FFBD2E]/80 text-[#5a3e00]"
+                        onclick="minimizeWindow()"
+                    >
+                        <svg
+                            class="w-2 h-2 opacity-0 group-hover/lights:opacity-100"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="3"
+                                d="M4 12h16"></path></svg
+                        >
+                    </div>
+                    <div
+                        id="btn-maximize"
+                        class="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29] shadow-sm flex items-center justify-center cursor-pointer hover:bg-[#27C93F]/80 text-[#004206]"
+                        onclick="toggleMaximize()"
+                    >
+                        <svg
+                            class="w-2 h-2 opacity-0 group-hover/lights:opacity-100"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="3"
+                                d="M8 3v3a2 2 0 01-2 2H3m18 0h-3a2 2 0 01-2-2V3m0 18v-3a2 2 0 012-2h3M3 16h3a2 2 0 012 2v3"
+                            ></path></svg
+                        >
+                    </div>
+                </div>
+                <!-- Nav Controls -->
+                <div class="flex gap-2 text-slate-400 absolute left-20">
+                    <svg
+                        class="w-4 h-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        ><polyline points="15 18 9 12 15 6"></polyline></svg
+                    >
+                    <svg
+                        class="w-4 h-4 opacity-50"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        ><polyline points="9 18 15 12 9 6"></polyline></svg
+                    >
+                </div>
+
+                <div
+                    class="text-xs font-semibold text-slate-600 dark:text-slate-300"
+                    data-i18n="projects.window.title"
+                >
+                    Projects — Esteban
+                </div>
+
+                <div class="w-16"></div>
+                <!-- Spacer -->
+            </div>
+
+            <!-- Window Content -->
+            <div class="flex flex-1 overflow-hidden">
+                <!-- Sidebar -->
+                <div
+                    class="w-36 bg-[#f3f3f3]/50 dark:bg-[#2A2A2A]/50 backdrop-blur-xl border-r border-slate-200 dark:border-black flex flex-col py-3 gap-1 shrink-0 p-2"
+                >
+                    <div
+                        class="px-2 text-[10px] font-bold mb-2 uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-slate-500 to-slate-400 dark:from-slate-400 dark:to-slate-500"
+                        data-i18n="projects.sidebar.favorites"
+                    >
+                        Favorites
+                    </div>
+                    <div
+                        id="sidebar-projects"
+                        class="flex items-center gap-2 px-2 py-1.5 bg-white/40 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-sm rounded-lg text-slate-700 dark:text-white text-xs cursor-pointer hover:bg-white/60 dark:hover:bg-white/10 hover:scale-[1.02] transition-all duration-200 group"
+                        onclick="showView('desktop')"
+                    >
+                        <svg
+                            class="w-3.5 h-3.5 text-blue-500 group-hover:scale-110 transition-transform"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                d="M19.5 21a3 3 0 0 0 3-3v-4.5a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h15ZM1.5 10.146V6a3 3 0 0 1 3-3h5.379a2.25 2.25 0 0 1 1.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 0 1 3 3v1.146A4.483 4.483 0 0 0 19.5 9h-15a4.483 4.483 0 0 0-3 1.146Z"
+                            ></path></svg
+                        >
+                        <span data-i18n="projects.sidebar.projects"
+                            >Projects</span
+                        >
+                    </div>
+                    <div
+                        id="sidebar-mymenu"
+                        class="flex items-center gap-2 px-2 py-1.5 bg-white/40 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-sm rounded-lg text-slate-700 dark:text-white text-xs cursor-pointer hover:bg-white/60 dark:hover:bg-white/10 hover:scale-[1.02] transition-all duration-200 group/mymenu mt-2"
+                        onclick="showView('mymenu')"
+                    >
+                        <div
+                            class="w-4 h-4 rounded-md overflow-hidden shadow-sm group-hover/mymenu:scale-110 transition-transform"
+                        >
+                            <img
+                                src={AppLogo.src}
+                                alt="MyMenu"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <span
+                            class="font-medium group-hover/mymenu:text-green-600 dark:group-hover/mymenu:text-green-400 transition-colors"
+                            >MyMenu</span
+                        >
+                        <span
+                            class="ml-auto text-[9px] font-bold text-white bg-gradient-to-r from-green-500 to-emerald-600 px-1.5 py-0.5 rounded-full shadow-sm"
+                            >NEW</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Main Area -->
+                <div
+                    class="flex-1 bg-white dark:bg-[#1e1e1e] flex flex-col items-center justify-center relative overflow-hidden"
+                >
+                    <div
+                        class="w-full h-full relative p-4 overflow-hidden"
+                        id="desktop-view"
+                    >
+                        <!-- App Shortcut -->
+                        <div
+                            class="absolute top-4 left-4 flex flex-col items-center gap-2 cursor-pointer group/app p-2 rounded-xl hover:bg-blue-50 dark:hover:bg-white/5 transition-colors w-24"
+                            onmousedown="initDragApp(event, this)"
+                        >
+                            <div
+                                class="w-14 h-14 rounded-2xl overflow-hidden shadow-md group-hover/app:shadow-lg transition-all duration-300 group-hover/app:-translate-y-1 pointer-events-none"
+                            >
+                                <img
+                                    src={AppLogo.src}
+                                    alt="MyMenu"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                            <span
+                                class="text-xs font-medium text-slate-600 dark:text-slate-300 group-hover/app:text-blue-600 dark:group-hover/app:text-blue-400 text-center leading-tight select-none"
+                                >MyMenu</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- MyMenu View -->
+                    <div
+                        id="mymenu-view"
+                        class="hidden w-full h-full flex-col overflow-y-auto no-scrollbar relative"
+                        style="container-type: inline-size;"
+                    >
+                        <!-- Background Blob -->
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80cqi] h-[80cqi] max-w-[500px] max-h-[500px] bg-green-500/10 rounded-full blur-[100px] pointer-events-none"
+                        >
+                        </div>
+
+                        <div
+                            class="w-full my-auto flex flex-col items-center gap-[4cqi] p-[5cqi] relative z-10"
+                        >
+                            <!-- Header Section -->
+                            <div class="text-center space-y-1 shrink-0">
+                                <h3
+                                    class="font-black text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 dark:from-green-400 dark:to-emerald-300 tracking-tight leading-tight"
+                                    style="font-size: clamp(1.5rem, 10cqi, 3rem);"
+                                >
+                                    MyMenu
+                                </h3>
+                                <p
+                                    class="font-medium text-slate-700 dark:text-slate-200"
+                                    style="font-size: clamp(0.875rem, 4cqi, 1.25rem);"
+                                >
+                                    Cocina Saludable, Vida Feliz
+                                </p>
+                            </div>
+
+                            <!-- Image Container -->
+                            <div class="w-full flex justify-center shrink">
+                                <img
+                                    src={MyMenuPreview.src}
+                                    alt="MyMenu Preview"
+                                    class="w-auto h-auto max-w-full max-h-[40vh] object-contain rounded-2xl shadow-2xl shadow-green-900/20 border border-slate-200 dark:border-white/10 transform hover:scale-[1.02] transition-transform duration-500"
+                                />
+                            </div>
+
+                            <!-- Description & Tech Stack -->
+                            <div
+                                class="text-center space-y-[3cqi] max-w-lg shrink-0"
+                            >
+                                <p
+                                    class="text-slate-600 dark:text-slate-300 leading-relaxed hidden sm:block"
+                                    style="font-size: clamp(0.8rem, 3.5cqi, 1.125rem);"
+                                >
+                                    Es una aplicación web que consiste en
+                                    hacerte una lista de la compra, automática
+                                    según las recetas que tenemos en la web y a
+                                    su vez organizarte una alimentación diaria.
+                                </p>
+
+                                <div
+                                    class="flex flex-col items-center gap-3 mt-2"
+                                >
+                                    <span
+                                        class="text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-400 dark:from-slate-200 dark:to-slate-400 uppercase tracking-widest"
+                                        >Herramientas utilizadas</span
+                                    >
+                                    <div
+                                        class="flex items-center justify-center gap-3 flex-wrap"
+                                    >
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-green-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-green-500/30 transition-all duration-300 group"
+                                            title="React"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                                alt="React"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-green-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-green-500/30 transition-all duration-300 group"
+                                            title="CSS"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                                alt="CSS"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-green-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-green-500/30 transition-all duration-300 group"
+                                            title="JavaScript"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                                alt="JavaScript"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-green-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-green-500/30 transition-all duration-300 group"
+                                            title="Node.js"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                                alt="Node.js"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-green-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-green-500/30 transition-all duration-300 group"
+                                            title="MongoDB"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                                                alt="MongoDB"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <!-- Repository Button -->
+                                    <a
+                                        href="https://github.com/EstebanRodriguezGutierrezDEV/MyMenu"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                                        style="font-size: clamp(0.875rem, 3.5cqi, 1rem);"
+                                    >
+                                        <svg
+                                            class="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                                            ></path>
+                                        </svg>
+                                        <span>Ver Repositorio</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Status Bar -->
+            <div
+                class="h-6 bg-[#f3f3f3] dark:bg-[#2A2A2A] border-t border-slate-200 dark:border-black flex items-center px-3 text-[10px] text-slate-400 relative"
+            >
+                <span data-i18n="projects.statusbar"
+                    >Bienvenido a mis proyectos</span
+                >
+                <!-- Resize Handles -->
+                <div
+                    class="absolute top-0 left-0 w-4 h-4 cursor-nw-resize z-50"
+                    onmousedown="initResize(event, 'nw')"
+                >
+                </div>
+                <div
+                    class="absolute top-0 right-0 w-4 h-4 cursor-ne-resize z-50"
+                    onmousedown="initResize(event, 'ne')"
+                >
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-4 h-4 cursor-sw-resize z-50"
+                    onmousedown="initResize(event, 'sw')"
+                >
+                </div>
+                <div
+                    class="absolute bottom-0 right-0 w-4 h-4 cursor-se-resize z-50"
+                    onmousedown="initResize(event, 'se')"
+                >
+                </div>
+
+                <!-- Edges -->
+                <div
+                    class="absolute top-0 left-4 right-4 h-2 cursor-n-resize z-40"
+                    onmousedown="initResize(event, 'n')"
+                >
+                </div>
+                <div
+                    class="absolute bottom-0 left-4 right-4 h-2 cursor-s-resize z-40"
+                    onmousedown="initResize(event, 's')"
+                >
+                </div>
+                <div
+                    class="absolute top-4 bottom-4 left-0 w-2 cursor-w-resize z-40"
+                    onmousedown="initResize(event, 'w')"
+                >
+                </div>
+                <div
+                    class="absolute top-4 bottom-4 right-0 w-2 cursor-e-resize z-40"
+                    onmousedown="initResize(event, 'e')"
+                >
+                </div>
+            </div>
+        </div>
+
+        <!-- Dock -->
+        <div
+            id="dock-container"
+            class="absolute bottom-4 left-1/2 -translate-x-1/2 h-16 bg-white/20 dark:bg-black/20 backdrop-blur-2xl px-4 rounded-2xl border border-white/20 flex items-center gap-4 shadow-2xl z-60"
+        >
+            <script is:inline>
+                // State
+                let isMaximized = false;
+                let isMinimized = false;
+                let isClosed = true;
+
+                // DOM Elements (fetched by ID in functions to ensure existence)
+
+                function toggleMaximize() {
+                    const win = document.getElementById("finder-window");
+                    const dockContainer =
+                        document.getElementById("dock-container");
+                    if (!win) return;
+
+                    isMaximized = !isMaximized;
+                    isMinimized = false; // Expanding from min resets this
+                    isClosed = false;
+
+                    if (isMaximized) {
+                        // Store original state if needed, but for now simple class toggle
+                        win.classList.add(
+                            "!top-7",
+                            "!left-0",
+                            "!translate-x-0",
+                            "!translate-y-0",
+                            "!w-full",
+                            "!h-[calc(100%-1.75rem)]",
+                            "!rounded-none",
+                        );
+                        // Remove centered positioning
+                        win.classList.remove(
+                            "top-1/2",
+                            "left-1/2",
+                            "-translate-x-1/2",
+                            "-translate-y-[55%]",
+                            "rounded-xl",
+                        );
+                        if (dockContainer)
+                            dockContainer.classList.add("hidden");
+                    } else {
+                        // Restore
+                        win.classList.remove(
+                            "!top-7",
+                            "!left-0",
+                            "!translate-x-0",
+                            "!translate-y-0",
+                            "!w-full",
+                            "!h-[calc(100%-1.75rem)]",
+                            "!rounded-none",
+                        );
+                        win.classList.add(
+                            "top-1/2",
+                            "left-1/2",
+                            "-translate-x-1/2",
+                            "-translate-y-[55%]",
+                            "rounded-xl",
+                        );
+                        // Reset size and position
+                        win.style.width = "";
+                        win.style.height = "";
+                        win.style.left = "";
+                        win.style.top = "";
+                        win.style.transform = "";
+                        if (dockContainer)
+                            dockContainer.classList.remove("hidden");
+                    }
+
+                    // Ensure visible
+                    win.classList.remove(
+                        "scale-0",
+                        "opacity-0",
+                        "translate-y-[200px]",
+                        "magictime",
+                        "tinDownIn",
+                    );
+                }
+
+                function minimizeWindow() {
+                    const win = document.getElementById("finder-window");
+                    if (!win) return;
+
+                    // Remove entrance animation if present
+                    win.classList.remove("magictime", "tinDownIn");
+
+                    // Add exit animation
+                    win.classList.add("magictime", "tinDownOut");
+
+                    const onAnimationEnd = () => {
+                        if (win.classList.contains("tinDownOut")) {
+                            isMinimized = true;
+                            isMaximized = false;
+                            win.classList.remove("magictime", "tinDownOut");
+                            win.classList.add(
+                                "scale-0",
+                                "opacity-0",
+                                "translate-y-[200px]",
+                            );
+                        }
+                        win.removeEventListener("animationend", onAnimationEnd);
+                    };
+
+                    win.addEventListener("animationend", onAnimationEnd);
+                }
+
+                function closeWindow() {
+                    const win = document.getElementById("finder-window");
+                    if (!win) return;
+
+                    isClosed = true;
+                    // Just fade out/scale down in place
+                    win.classList.add(
+                        "scale-90",
+                        "opacity-0",
+                        "pointer-events-none",
+                    );
+                    win.classList.remove("magictime", "tinDownIn");
+                }
+
+                function restoreWindow() {
+                    const win = document.getElementById("finder-window");
+                    if (!win) return;
+
+                    isMinimized = false;
+                    isClosed = false;
+
+                    // Restore visibility
+                    win.classList.remove(
+                        "scale-90",
+                        "scale-0",
+                        "opacity-0",
+                        "translate-y-[200px]",
+                        "pointer-events-none",
+                    );
+
+                    // Add animation
+                    win.classList.add("magictime", "tinDownIn");
+
+                    // If it was maximized, it stays maximized, otherwise centered
+                    // (Logic handled by class presence)
+                }
+
+                function closeWindowWithAnimation() {
+                    const win = document.getElementById("finder-window");
+                    if (!win) return;
+
+                    // Remove entrance animation if present
+                    win.classList.remove("magictime", "tinDownIn");
+
+                    // Add exit animation
+                    win.classList.add("magictime", "tinDownOut");
+
+                    // Wait for animation to finish then hide
+                    const onAnimationEnd = () => {
+                        if (win.classList.contains("tinDownOut")) {
+                            isClosed = true;
+                            win.classList.remove("magictime", "tinDownOut");
+                            win.classList.add(
+                                "scale-90",
+                                "opacity-0",
+                                "pointer-events-none",
+                            );
+                        }
+                        win.removeEventListener("animationend", onAnimationEnd);
+                    };
+
+                    win.addEventListener("animationend", onAnimationEnd);
+                }
+
+                function toggleWindow() {
+                    if (!isClosed && !isMinimized) {
+                        closeWindowWithAnimation();
+                    } else {
+                        restoreWindow();
+                    }
+                }
+
+                function showView(viewName) {
+                    const desktopView = document.getElementById("desktop-view");
+                    const myMenuView = document.getElementById("mymenu-view");
+                    const sidebarProjects =
+                        document.getElementById("sidebar-projects");
+                    const sidebarMyMenu =
+                        document.getElementById("sidebar-mymenu");
+
+                    if (!desktopView || !myMenuView) return;
+
+                    // Active/Inactive classes
+                    const activeClasses = [
+                        "bg-slate-200/50",
+                        "dark:bg-white/10",
+                        "text-slate-700",
+                        "dark:text-white",
+                    ];
+                    const inactiveClasses = [
+                        "text-slate-500",
+                        "dark:text-slate-400",
+                        "hover:bg-slate-200/30",
+                        "dark:hover:bg-white/5",
+                    ];
+
+                    if (viewName === "desktop") {
+                        desktopView.classList.remove("hidden");
+                        myMenuView.classList.add("hidden");
+                        myMenuView.classList.remove("flex");
+
+                        if (sidebarProjects && sidebarMyMenu) {
+                            sidebarProjects.classList.add(...activeClasses);
+                            sidebarProjects.classList.remove(
+                                ...inactiveClasses,
+                            );
+                            sidebarMyMenu.classList.remove(...activeClasses);
+                            sidebarMyMenu.classList.add(...inactiveClasses);
+                        }
+                    } else if (viewName === "mymenu") {
+                        desktopView.classList.add("hidden");
+                        myMenuView.classList.remove("hidden");
+                        myMenuView.classList.add("flex");
+
+                        if (sidebarProjects && sidebarMyMenu) {
+                            sidebarMyMenu.classList.add(...activeClasses);
+                            sidebarMyMenu.classList.remove(...inactiveClasses);
+                            sidebarProjects.classList.remove(...activeClasses);
+                            sidebarProjects.classList.add(...inactiveClasses);
+                        }
+                    }
+                }
+
+                // Expose globally for onclicks
+                window.toggleMaximize = toggleMaximize;
+                window.minimizeWindow = minimizeWindow;
+                window.closeWindow = closeWindow;
+                window.restoreWindow = restoreWindow;
+                window.toggleWindow = toggleWindow;
+                window.showView = showView;
+
+                // Drag Implementation
+                const win = document.getElementById("finder-window");
+                const titleBar = document.getElementById("window-titlebar");
+
+                // Helper to disable transitions during interaction
+                const setInteracting = (interacting) => {
+                    if (interacting) {
+                        win.classList.remove(
+                            "transition-all",
+                            "duration-300",
+                            "ease-in-out",
+                        );
+                    } else {
+                        win.classList.add(
+                            "transition-all",
+                            "duration-300",
+                            "ease-in-out",
+                        );
+                    }
+                };
+
+                // Draggable Logic
+                let isDragging = false;
+                let startX, startY, initialLeft, initialTop;
+
+                if (win && titleBar) {
+                    titleBar.addEventListener("mousedown", (e) => {
+                        if (isMaximized) return; // Don't drag if maximized
+                        // Prevent dragging if clicking traffic lights
+                        if (
+                            e.target instanceof Element &&
+                            e.target.closest(".group\\/lights")
+                        )
+                            return;
+
+                        isDragging = true;
+                        startX = e.clientX;
+                        startY = e.clientY;
+
+                        const rect = win.getBoundingClientRect();
+                        const parentRect =
+                            win.offsetParent.getBoundingClientRect();
+
+                        initialLeft = rect.left - parentRect.left;
+                        initialTop = rect.top - parentRect.top;
+
+                        setInteracting(true);
+
+                        // We need to remove the centering transforms if we are moving manually
+                        win.classList.remove(
+                            "-translate-x-1/2",
+                            "-translate-y-[55%]",
+                        );
+                        win.style.left = `${initialLeft}px`;
+                        win.style.top = `${initialTop}px`;
+                        win.style.transform = "none"; // Clear transform
+                    });
+                }
+
+                // Resize Implementation
+                let isResizing = false;
+                let resizeDir = "";
+                let resizeStartX, resizeStartY;
+                let resizeStartW, resizeStartH, resizeStartLeft, resizeStartTop;
+
+                window.initResize = function (e, direction) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    isResizing = true;
+                    resizeDir = direction;
+                    resizeStartX = e.clientX;
+                    resizeStartY = e.clientY;
+
+                    const rect = win.getBoundingClientRect();
+                    const parentRect = win.offsetParent.getBoundingClientRect();
+
+                    resizeStartW = rect.width;
+                    resizeStartH = rect.height;
+                    resizeStartLeft = rect.left - parentRect.left;
+                    resizeStartTop = rect.top - parentRect.top;
+
+                    // Ensure we are in absolute positioning mode
+                    win.classList.remove(
+                        "-translate-x-1/2",
+                        "-translate-y-[55%]",
+                    );
+                    win.style.left = `${resizeStartLeft}px`;
+                    win.style.top = `${resizeStartTop}px`;
+                    win.style.transform = "none";
+
+                    setInteracting(true);
+                };
+
+                function resize(e) {
+                    const dx = e.clientX - resizeStartX;
+                    const dy = e.clientY - resizeStartY;
+
+                    const parent = win.offsetParent;
+                    const parentWidth = parent.clientWidth;
+                    const parentHeight = parent.clientHeight;
+
+                    let newW = resizeStartW;
+                    let newH = resizeStartH;
+                    let newLeft = resizeStartLeft;
+                    let newTop = resizeStartTop;
+
+                    // Calculate new dimensions and position based on direction
+                    if (resizeDir.includes("e")) {
+                        newW = resizeStartW + dx;
+                    }
+                    if (resizeDir.includes("w")) {
+                        newW = resizeStartW - dx;
+                        newLeft = resizeStartLeft + dx;
+                    }
+                    if (resizeDir.includes("s")) {
+                        newH = resizeStartH + dy;
+                    }
+                    if (resizeDir.includes("n")) {
+                        newH = resizeStartH - dy;
+                        newTop = resizeStartTop + dy;
+                    }
+
+                    // Constrain Min Size
+                    if (newW < 300) {
+                        if (resizeDir.includes("w"))
+                            newLeft = resizeStartLeft + (resizeStartW - 300);
+                        newW = 300;
+                    }
+                    if (newH < 200) {
+                        if (resizeDir.includes("n"))
+                            newTop = resizeStartTop + (resizeStartH - 200);
+                        newH = 200;
+                    }
+
+                    // Constrain Max Size / Bounds
+                    if (newLeft < 0) {
+                        newW += newLeft; // Shrink width if hitting left wall
+                        newLeft = 0;
+                    }
+                    if (newTop < 0) {
+                        newH += newTop; // Shrink height if hitting top wall
+                        newTop = 0;
+                    }
+                    if (newLeft + newW > parentWidth) {
+                        newW = parentWidth - newLeft;
+                    }
+                    if (newTop + newH > parentHeight) {
+                        newH = parentHeight - newTop;
+                    }
+
+                    win.style.width = `${newW}px`;
+                    win.style.height = `${newH}px`;
+                    win.style.left = `${newLeft}px`;
+                    win.style.top = `${newTop}px`;
+                }
+
+                // App Drag Implementation
+                let isDraggingApp = false;
+                let currentApp = null;
+                let appStartX, appStartY, appInitialLeft, appInitialTop;
+
+                window.initDragApp = function (e, element) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    isDraggingApp = true;
+                    currentApp = element;
+                    appStartX = e.clientX;
+                    appStartY = e.clientY;
+
+                    appInitialLeft = element.offsetLeft;
+                    appInitialTop = element.offsetTop;
+
+                    // Disable transition during drag
+                    element.style.transition = "none";
+                };
+
+                function dragApp(e) {
+                    if (!isDraggingApp || !currentApp) return;
+
+                    const dx = e.clientX - appStartX;
+                    const dy = e.clientY - appStartY;
+
+                    let newLeft = appInitialLeft + dx;
+                    let newTop = appInitialTop + dy;
+
+                    // Constrain to desktop area
+                    const parent = currentApp.parentElement;
+                    const parentWidth = parent.clientWidth;
+                    const parentHeight = parent.clientHeight;
+                    const appWidth = currentApp.offsetWidth;
+                    const appHeight = currentApp.offsetHeight;
+
+                    if (newLeft < 0) newLeft = 0;
+                    if (newTop < 0) newTop = 0;
+                    if (newLeft + appWidth > parentWidth)
+                        newLeft = parentWidth - appWidth;
+                    if (newTop + appHeight > parentHeight)
+                        newTop = parentHeight - appHeight;
+
+                    currentApp.style.left = `${newLeft}px`;
+                    currentApp.style.top = `${newTop}px`;
+                }
+
+                // Global Mouse Events
+                document.addEventListener("mousemove", (e) => {
+                    if (isDragging) {
+                        e.preventDefault();
+
+                        const dx = e.clientX - startX;
+                        const dy = e.clientY - startY;
+
+                        let newLeft = initialLeft + dx;
+                        let newTop = initialTop + dy;
+
+                        const parent = win.offsetParent;
+                        if (parent) {
+                            const parentWidth = parent.clientWidth;
+                            const parentHeight = parent.clientHeight;
+                            const winWidth = win.offsetWidth;
+                            const winHeight = win.offsetHeight;
+
+                            // Constrain
+                            if (newLeft < 0) newLeft = 0;
+                            if (newTop < 0) newTop = 0;
+                            if (newLeft + winWidth > parentWidth)
+                                newLeft = parentWidth - winWidth;
+                            if (newTop + winHeight > parentHeight)
+                                newTop = parentHeight - winHeight;
+                        }
+
+                        win.style.left = `${newLeft}px`;
+                        win.style.top = `${newTop}px`;
+                    } else if (isResizing) {
+                        resize(e);
+                    } else if (isDraggingApp) {
+                        dragApp(e);
+                    }
+                });
+
+                document.addEventListener("mouseup", () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        setInteracting(false);
+                    }
+                    if (isResizing) {
+                        isResizing = false;
+                        setInteracting(false);
+                    }
+                    if (isDraggingApp) {
+                        isDraggingApp = false;
+                        if (currentApp) {
+                            currentApp.style.transition = ""; // Restore transition
+                            currentApp = null;
+                        }
+                    }
+                });
+            </script>
+            <!-- Launchpad -->
+            <div
+                onclick="toggleWindow()"
+                class="w-10 h-10 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-xl shadow-lg border border-white/20 flex items-center justify-center group/dock-icon hover:-translate-y-2 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 cursor-pointer"
+            >
+                <div
+                    class="grid grid-cols-3 gap-1 opacity-90 group-hover/dock-icon:opacity-100 transition-opacity"
+                >
+                    <div class="w-1 h-1 bg-white rounded-full shadow-sm"></div>
+                    <div class="w-1 h-1 bg-white rounded-full shadow-sm"></div>
+                    <div class="w-1 h-1 bg-white rounded-full shadow-sm"></div>
+                    <div class="w-1 h-1 bg-white rounded-full shadow-sm"></div>
+                    <div class="w-1 h-1 bg-white rounded-full shadow-sm"></div>
+                    <div class="w-1 h-1 bg-white rounded-full shadow-sm"></div>
+                    <div class="w-1 h-1 bg-white rounded-full shadow-sm"></div>
+                    <div class="w-1 h-1 bg-white rounded-full shadow-sm"></div>
+                    <div class="w-1 h-1 bg-white rounded-full shadow-sm"></div>
+                </div>
+            </div>
+            <!-- App Icon -->
+            <div
+                onclick="toggleWindow()"
+                class="w-10 h-10 bg-white/10 rounded-xl shadow-lg border border-white/20 flex items-center justify-center group/dock-icon hover:-translate-y-2 transition-transform duration-300 cursor-pointer overflow-hidden"
+            >
+                <img
+                    src={AppLogo.src}
+                    alt="App Logo"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+        </div>
     </div>
 </div>
+
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
