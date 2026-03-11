@@ -2,185 +2,614 @@
 import pythonPdf from "../assets/pdf/CursoPython.pdf";
 import scrapingPdf from "../assets/pdf/Scraping.pdf";
 import bigschoolPdf from "../assets/pdf/Bigschool.pdf";
+import CursoAnimacionesCSS from "../assets/pdf/CursoAnimacionesCSS.pdf";
+import CursoAstro from "../assets/pdf/Curso-Astro.pdf";
+import CursoCSSGrid from "../assets/pdf/Curso-CSS-Grid.pdf";
+import CursoCSS from "../assets/pdf/Curso-CSS.pdf";
+import CursoGSAP from "../assets/pdf/Curso-GSAP.pdf";
+import CursoHTML from "../assets/pdf/Curso-HTML.pdf";
+import TituloBigData from "../assets/pdf/Titulo BigData.pdf";
+import TituloCiber from "../assets/pdf/Titulo Ciber.pdf";
 ---
 
 <div
-    class="group/card bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-6 sm:p-8 w-full flex flex-col gap-6 transition-all duration-300 h-fit hover:scale-[1.02]"
+    class="group/card bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-6 sm:p-8 w-full flex flex-col gap-6 transition-all duration-300 h-fit shadow-sm hover:scale-[1.01]"
 >
-    <h2
-        class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent text-center sm:text-left relative w-fit mx-auto sm:mx-0"
-        data-i18n="certifications.title"
-    >
-        Certificaciones
-    </h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <a
-            href={pythonPdf}
-            target="_blank"
-            class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 shadow-sm transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg border border-slate-100 dark:border-slate-700 group/item"
+    <div class="flex items-center justify-between px-2">
+        <h2
+            class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent"
+            data-i18n="certifications.title"
         >
-            <div
-                class="p-1 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
-            >
-                <svg
-                    version="1.2"
-                    preserveAspectRatio="xMidYMid"
-                    viewBox="0 0 228 198"
-                    role="img"
-                    aria-label="Academia de Midudev"
-                    class="h-10 w-auto"
-                    width="228"
-                    height="198"
-                    ><g
-                        ><path
-                            fill="#199afc"
-                            d="M73.2 126.4c-15 15-15 39.3 0 54.3L19 126.4C4 111.5 4 87.2 19 72.2L73.2 18c15-15 39.2-15 54.2 0s15 39.2 0 54.2z"
-                        ></path><path
-                            fill="#1d5682"
-                            d="m73.2 126.4 27.1-27.1 27.1 27.1c15 15 15 39.3 0 54.3-15 14.9-39.2 14.9-54.2 0-15-15-15-39.3 0-54.3z"
-                        ></path><g
-                            ><path
-                                fill="#199afc"
-                                d="M185.5 84.3c8.3-8.2 8.3-21.7 0-29.9l30 29.9c8.2 8.3 8.2 21.7 0 30l-30 30c-8.3 8.3-21.7 8.3-30 0s-8.3-21.7 0-30z"
-                            ></path><path
-                                fill="#1d5682"
-                                d="m185.5 84.3-15 15-15-15c-8.3-8.2-8.3-21.7 0-29.9 8.3-8.3 21.7-8.3 30 0 8.3 8.2 8.3 21.7 0 29.9z"
-                            ></path></g
-                        ></g
-                    ></svg
-                >
-            </div>
-            <div class="flex flex-col">
-                <span
-                    class="font-bold text-slate-800 dark:text-slate-200"
-                    data-i18n="certifications.python.title"
-                    >Python desde cero</span
-                >
-                <span
-                    class="text-sm text-slate-500 dark:text-slate-400"
-                    data-i18n="certifications.python.issuer">Midudev</span
-                >
-                <span
-                    class="text-xs text-slate-400 mt-1"
-                    data-i18n="certifications.python.date">Issued:2025</span
-                >
-            </div>
-        </a>
+            Certificaciones
+        </h2>
+    </div>
 
-        <a
-            href={scrapingPdf}
-            target="_blank"
-            class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 shadow-sm transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg border border-slate-100 dark:border-slate-700 group/item"
-        >
-            <div
-                class="p-1 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
-            >
-                <svg
-                    version="1.2"
-                    preserveAspectRatio="xMidYMid"
-                    viewBox="0 0 228 198"
-                    role="img"
-                    aria-label="Academia de Midudev"
-                    class="h-10 w-auto"
-                    width="228"
-                    height="198"
-                    ><g
-                        ><path
-                            fill="#199afc"
-                            d="M73.2 126.4c-15 15-15 39.3 0 54.3L19 126.4C4 111.5 4 87.2 19 72.2L73.2 18c15-15 39.2-15 54.2 0s15 39.2 0 54.2z"
-                        ></path><path
-                            fill="#1d5682"
-                            d="m73.2 126.4 27.1-27.1 27.1 27.1c15 15 15 39.3 0 54.3-15 14.9-39.2 14.9-54.2 0-15-15-15-39.3 0-54.3z"
-                        ></path><g
-                            ><path
-                                fill="#199afc"
-                                d="M185.5 84.3c8.3-8.2 8.3-21.7 0-29.9l30 29.9c8.2 8.3 8.2 21.7 0 30l-30 30c-8.3 8.3-21.7 8.3-30 0s-8.3-21.7 0-30z"
-                            ></path><path
-                                fill="#1d5682"
-                                d="m185.5 84.3-15 15-15-15c-8.3-8.2-8.3-21.7 0-29.9 8.3-8.3 21.7-8.3 30 0 8.3 8.2 8.3 21.7 0 29.9z"
-                            ></path></g
-                        ></g
-                    ></svg
-                >
-            </div>
-            <div class="flex flex-col">
-                <span
-                    class="font-bold text-slate-800 dark:text-slate-200"
-                    data-i18n="certifications.scraping.title"
-                    >Iniciación al Scraping con Python</span
-                >
-                <span
-                    class="text-sm text-slate-500 dark:text-slate-400"
-                    data-i18n="certifications.scraping.issuer">Midudev</span
-                >
-                <span
-                    class="text-xs text-slate-400 mt-1"
-                    data-i18n="certifications.scraping.date">Issued: 2025</span
-                >
-            </div>
-        </a>
 
-        <a
-            href={bigschoolPdf}
-            target="_blank"
-            class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 shadow-sm transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg border border-slate-100 dark:border-slate-700 group/item"
-        >
-            <div
-                class="p-3 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
-            >
-                <img
-                    src="https://ebootcamp.net/wp-content/uploads/2025/08/big_school_logo-150x150.jpg"
-                    alt="BIG school"
-                    class="w-10 h-10 rounded-lg object-cover"
-                />
-            </div>
-            <div class="flex flex-col">
-                <span
-                    class="font-bold text-slate-800 dark:text-slate-200"
-                    data-i18n="certifications.ia.title"
-                    >Curso de Iniciación al Desarrollo con IA</span
-                >
-                <span
-                    class="text-sm text-slate-500 dark:text-slate-400"
-                    data-i18n="certifications.ia.issuer">BIG school</span
-                >
-                <span
-                    class="text-xs text-slate-400 mt-1"
-                    data-i18n="certifications.ia.date">Issued: 2025</span
-                >
-            </div>
-        </a>
         <div
-            class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 shadow-sm transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg border border-slate-100 dark:border-slate-700 group/item"
+            id="cert-carousel"
+            class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth"
         >
+            <!-- Página 1: Python, Scraping, BIG School, DAM -->
             <div
-                class="p-3 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
+                class="flex-none w-full snap-start grid grid-cols-1 sm:grid-cols-2 gap-4 pr-1"
             >
-                <img
-                    src="https://cesjuanpablosegundo.es/wp-content/uploads/2024/03/FAVICON.png"
-                    alt="CES Juan Pablo II"
-                    class="w-10 h-10 rounded-lg object-contain bg-white p-1"
-                />
+                <a
+                    href={pythonPdf}
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
+                >
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
+                    >
+                        <!-- Python SVG -->
+                        <svg
+                            version="1.2"
+                            viewBox="0 0 228 198"
+                            class="h-9 w-auto block"
+                            preserveAspectRatio="xMidYMid meet"
+                        >
+                            <g
+                                ><path
+                                    fill="#199afc"
+                                    d="M73.2 126.4c-15 15-15 39.3 0 54.3L19 126.4C4 111.5 4 87.2 19 72.2L73.2 18c15-15 39.2-15 54.2 0s15 39.2 0 54.2z"
+                                ></path><path
+                                    fill="#1d5682"
+                                    d="m73.2 126.4 27.1-27.1 27.1 27.1c15 15 15 39.3 0 54.3-15 14.9-39.2 14.9-54.2 0-15-15-15-39.3 0-54.3z"
+                                ></path><g
+                                    ><path
+                                        fill="#199afc"
+                                        d="M185.5 84.3c8.3-8.2 8.3-21.7 0-29.9l30 29.9c8.2 8.3 8.2 21.7 0 30l-30 30c-8.3 8.3-21.7 8.3-30 0s-8.3-21.7 0-30z"
+                                    ></path><path
+                                        fill="#1d5682"
+                                        d="m185.5 84.3-15 15-15-15c-8.3-8.2-8.3-21.7 0-29.9 8.3-8.3 21.7-8.3 30 0 8.3 8.2 8.3 21.7 0 29.9z"
+                                    ></path></g
+                                ></g
+                            >
+                        </svg>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            data-i18n="certifications.python.title"
+                            >Python desde cero</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >Midudev</span
+                        >
+                    </div>
+                </a>
+
+                <a
+                    href={scrapingPdf}
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
+                >
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
+                    >
+                        <!-- Python SVG (scraping es de Python) -->
+                        <svg
+                            version="1.2"
+                            viewBox="0 0 228 198"
+                            class="h-9 w-auto block"
+                            preserveAspectRatio="xMidYMid meet"
+                        >
+                            <g
+                                ><path
+                                    fill="#199afc"
+                                    d="M73.2 126.4c-15 15-15 39.3 0 54.3L19 126.4C4 111.5 4 87.2 19 72.2L73.2 18c15-15 39.2-15 54.2 0s15 39.2 0 54.2z"
+                                ></path><path
+                                    fill="#1d5682"
+                                    d="m73.2 126.4 27.1-27.1 27.1 27.1c15 15 15 39.3 0 54.3-15 14.9-39.2 14.9-54.2 0-15-15-15-39.3 0-54.3z"
+                                ></path><g
+                                    ><path
+                                        fill="#199afc"
+                                        d="M185.5 84.3c8.3-8.2 8.3-21.7 0-29.9l30 29.9c8.2 8.3 8.2 21.7 0 30l-30 30c-8.3 8.3-21.7 8.3-30 0s-8.3-21.7 0-30z"
+                                    ></path><path
+                                        fill="#1d5682"
+                                        d="m185.5 84.3-15 15-15-15c-8.3-8.2-8.3-21.7 0-29.9 8.3-8.3 21.7-8.3 30 0 8.3 8.2 8.3 21.7 0 29.9z"
+                                    ></path></g
+                                ></g
+                            >
+                        </svg>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            data-i18n="certifications.scraping.title"
+                            >Scraping Python</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >Midudev</span
+                        >
+                    </div>
+                </a>
+
+                <a
+                    href={bigschoolPdf}
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
+                >
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 group-hover/item:scale-110 transition-transform"
+                    >
+                        <img
+                            src="https://ebootcamp.net/wp-content/uploads/2025/08/big_school_logo-150x150.jpg"
+                            alt="BIG"
+                            class="w-9 h-9 rounded-lg object-cover"
+                        />
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            data-i18n="certifications.ia.title"
+                            >Desarrollo con IA</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >BIG school</span
+                        >
+                    </div>
+                </a>
+
+                <a
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
+                >
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 group-hover/item:scale-110 transition-transform"
+                    >
+                        <img
+                            src="https://cesjuanpablosegundo.es/wp-content/uploads/2024/03/FAVICON.png"
+                            alt="CES"
+                            class="w-9 h-9 rounded-lg object-contain bg-white p-1"
+                        />
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            data-i18n="certifications.dam.title"
+                            >Grado Superior DAM</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >CES Juan Pablo II</span
+                        >
+                    </div>
+                </a>
             </div>
-            <div class="flex flex-col">
-                <span
-                    class="font-bold text-slate-800 dark:text-slate-200"
-                    data-i18n="certifications.dam.title"
-                    >Grado Superior en Desarrollo de Aplicaciones
-                    Multiplataforma</span
+
+            <!-- Página 2: Animaciones CSS, Astro, CSS Grid, CSS -->
+            <div
+                class="flex-none w-full snap-start grid grid-cols-1 sm:grid-cols-2 gap-4 pr-1"
+            >
+                <a
+                    href={CursoAnimacionesCSS}
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
                 >
-                <span
-                    class="text-sm text-slate-500 dark:text-slate-400"
-                    data-i18n="certifications.dam.issuer"
-                    >CES Juan Pablo II</span
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
+                    >
+                        <!-- Midudev SVG -->
+                        <svg
+                            version="1.2"
+                            viewBox="0 0 228 198"
+                            class="h-9 w-auto block"
+                            preserveAspectRatio="xMidYMid meet"
+                        >
+                            <g
+                                ><path
+                                    fill="#199afc"
+                                    d="M73.2 126.4c-15 15-15 39.3 0 54.3L19 126.4C4 111.5 4 87.2 19 72.2L73.2 18c15-15 39.2-15 54.2 0s15 39.2 0 54.2z"
+                                ></path><path
+                                    fill="#1d5682"
+                                    d="m73.2 126.4 27.1-27.1 27.1 27.1c15 15 15 39.3 0 54.3-15 14.9-39.2 14.9-54.2 0-15-15-15-39.3 0-54.3z"
+                                ></path><g
+                                    ><path
+                                        fill="#199afc"
+                                        d="M185.5 84.3c8.3-8.2 8.3-21.7 0-29.9l30 29.9c8.2 8.3 8.2 21.7 0 30l-30 30c-8.3 8.3-21.7 8.3-30 0s-8.3-21.7 0-30z"
+                                    ></path><path
+                                        fill="#1d5682"
+                                        d="m185.5 84.3-15 15-15-15c-8.3-8.2-8.3-21.7 0-29.9 8.3-8.3 21.7-8.3 30 0 8.3 8.2 8.3 21.7 0 29.9z"
+                                    ></path></g
+                                ></g
+                            >
+                        </svg>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            >Curso de Animaciones en CSS</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >Midudev</span
+                        >
+                    </div>
+                </a>
+
+                <a
+                    href={CursoAstro}
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
                 >
-                <span
-                    class="text-xs text-slate-400 mt-1"
-                    data-i18n="certifications.dam.date"
-                    >Issued: 2024 - 2025</span
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
+                    >
+                        <!-- Midudev SVG -->
+                        <svg
+                            version="1.2"
+                            viewBox="0 0 228 198"
+                            class="h-9 w-auto block"
+                            preserveAspectRatio="xMidYMid meet"
+                        >
+                            <g
+                                ><path
+                                    fill="#199afc"
+                                    d="M73.2 126.4c-15 15-15 39.3 0 54.3L19 126.4C4 111.5 4 87.2 19 72.2L73.2 18c15-15 39.2-15 54.2 0s15 39.2 0 54.2z"
+                                ></path><path
+                                    fill="#1d5682"
+                                    d="m73.2 126.4 27.1-27.1 27.1 27.1c15 15 15 39.3 0 54.3-15 14.9-39.2 14.9-54.2 0-15-15-15-39.3 0-54.3z"
+                                ></path><g
+                                    ><path
+                                        fill="#199afc"
+                                        d="M185.5 84.3c8.3-8.2 8.3-21.7 0-29.9l30 29.9c8.2 8.3 8.2 21.7 0 30l-30 30c-8.3 8.3-21.7 8.3-30 0s-8.3-21.7 0-30z"
+                                    ></path><path
+                                        fill="#1d5682"
+                                        d="m185.5 84.3-15 15-15-15c-8.3-8.2-8.3-21.7 0-29.9 8.3-8.3 21.7-8.3 30 0 8.3 8.2 8.3 21.7 0 29.9z"
+                                    ></path></g
+                                ></g
+                            >
+                        </svg>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            >Curso de Astro</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >Midudev</span
+                        >
+                    </div>
+                </a>
+
+                <a
+                    href={CursoCSSGrid}
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
                 >
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
+                    >
+                        <!-- Midudev SVG -->
+                        <svg
+                            version="1.2"
+                            viewBox="0 0 228 198"
+                            class="h-9 w-auto block"
+                            preserveAspectRatio="xMidYMid meet"
+                        >
+                            <g
+                                ><path
+                                    fill="#199afc"
+                                    d="M73.2 126.4c-15 15-15 39.3 0 54.3L19 126.4C4 111.5 4 87.2 19 72.2L73.2 18c15-15 39.2-15 54.2 0s15 39.2 0 54.2z"
+                                ></path><path
+                                    fill="#1d5682"
+                                    d="m73.2 126.4 27.1-27.1 27.1 27.1c15 15 15 39.3 0 54.3-15 14.9-39.2 14.9-54.2 0-15-15-15-39.3 0-54.3z"
+                                ></path><g
+                                    ><path
+                                        fill="#199afc"
+                                        d="M185.5 84.3c8.3-8.2 8.3-21.7 0-29.9l30 29.9c8.2 8.3 8.2 21.7 0 30l-30 30c-8.3 8.3-21.7 8.3-30 0s-8.3-21.7 0-30z"
+                                    ></path><path
+                                        fill="#1d5682"
+                                        d="m185.5 84.3-15 15-15-15c-8.3-8.2-8.3-21.7 0-29.9 8.3-8.3 21.7-8.3 30 0 8.3 8.2 8.3 21.7 0 29.9z"
+                                    ></path></g
+                                ></g
+                            >
+                        </svg>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            >Curso de CSS Grid</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >Midudev</span
+                        >
+                    </div>
+                </a>
+
+                <a
+                    href={CursoCSS}
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
+                >
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
+                    >
+                        <!-- Midudev SVG -->
+                        <svg
+                            version="1.2"
+                            viewBox="0 0 228 198"
+                            class="h-9 w-auto block"
+                            preserveAspectRatio="xMidYMid meet"
+                        >
+                            <g
+                                ><path
+                                    fill="#199afc"
+                                    d="M73.2 126.4c-15 15-15 39.3 0 54.3L19 126.4C4 111.5 4 87.2 19 72.2L73.2 18c15-15 39.2-15 54.2 0s15 39.2 0 54.2z"
+                                ></path><path
+                                    fill="#1d5682"
+                                    d="m73.2 126.4 27.1-27.1 27.1 27.1c15 15 15 39.3 0 54.3-15 14.9-39.2 14.9-54.2 0-15-15-15-39.3 0-54.3z"
+                                ></path><g
+                                    ><path
+                                        fill="#199afc"
+                                        d="M185.5 84.3c8.3-8.2 8.3-21.7 0-29.9l30 29.9c8.2 8.3 8.2 21.7 0 30l-30 30c-8.3 8.3-21.7 8.3-30 0s-8.3-21.7 0-30z"
+                                    ></path><path
+                                        fill="#1d5682"
+                                        d="m185.5 84.3-15 15-15-15c-8.3-8.2-8.3-21.7 0-29.9 8.3-8.3 21.7-8.3 30 0 8.3 8.2 8.3 21.7 0 29.9z"
+                                    ></path></g
+                                ></g
+                            >
+                        </svg>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            >Curso de CSS</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >Midudev</span
+                        >
+                    </div>
+                </a>
+            </div>
+
+            <!-- Página 3: GSAP, HTML, BigData, CiberSeguridad -->
+            <div
+                class="flex-none w-full snap-start grid grid-cols-1 sm:grid-cols-2 gap-4 pr-1"
+            >
+                <a
+                    href={CursoGSAP}
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
+                >
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
+                    >
+                        <!-- Midudev SVG -->
+                        <svg
+                            version="1.2"
+                            viewBox="0 0 228 198"
+                            class="h-9 w-auto block"
+                            preserveAspectRatio="xMidYMid meet"
+                        >
+                            <g
+                                ><path
+                                    fill="#199afc"
+                                    d="M73.2 126.4c-15 15-15 39.3 0 54.3L19 126.4C4 111.5 4 87.2 19 72.2L73.2 18c15-15 39.2-15 54.2 0s15 39.2 0 54.2z"
+                                ></path><path
+                                    fill="#1d5682"
+                                    d="m73.2 126.4 27.1-27.1 27.1 27.1c15 15 15 39.3 0 54.3-15 14.9-39.2 14.9-54.2 0-15-15-15-39.3 0-54.3z"
+                                ></path><g
+                                    ><path
+                                        fill="#199afc"
+                                        d="M185.5 84.3c8.3-8.2 8.3-21.7 0-29.9l30 29.9c8.2 8.3 8.2 21.7 0 30l-30 30c-8.3 8.3-21.7 8.3-30 0s-8.3-21.7 0-30z"
+                                    ></path><path
+                                        fill="#1d5682"
+                                        d="m185.5 84.3-15 15-15-15c-8.3-8.2-8.3-21.7 0-29.9 8.3-8.3 21.7-8.3 30 0 8.3 8.2 8.3 21.7 0 29.9z"
+                                    ></path></g
+                                ></g
+                            >
+                        </svg>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            >Curso de GSAP</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >Midudev</span
+                        >
+                    </div>
+                </a>
+
+                <a
+                    href={CursoHTML}
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
+                >
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover/item:scale-110 transition-transform"
+                    >
+                        <!-- Midudev SVG -->
+                        <svg
+                            version="1.2"
+                            viewBox="0 0 228 198"
+                            class="h-9 w-auto block"
+                            preserveAspectRatio="xMidYMid meet"
+                        >
+                            <g
+                                ><path
+                                    fill="#199afc"
+                                    d="M73.2 126.4c-15 15-15 39.3 0 54.3L19 126.4C4 111.5 4 87.2 19 72.2L73.2 18c15-15 39.2-15 54.2 0s15 39.2 0 54.2z"
+                                ></path><path
+                                    fill="#1d5682"
+                                    d="m73.2 126.4 27.1-27.1 27.1 27.1c15 15 15 39.3 0 54.3-15 14.9-39.2 14.9-54.2 0-15-15-15-39.3 0-54.3z"
+                                ></path><g
+                                    ><path
+                                        fill="#199afc"
+                                        d="M185.5 84.3c8.3-8.2 8.3-21.7 0-29.9l30 29.9c8.2 8.3 8.2 21.7 0 30l-30 30c-8.3 8.3-21.7 8.3-30 0s-8.3-21.7 0-30z"
+                                    ></path><path
+                                        fill="#1d5682"
+                                        d="m185.5 84.3-15 15-15-15c-8.3-8.2-8.3-21.7 0-29.9 8.3-8.3 21.7-8.3 30 0 8.3 8.2 8.3 21.7 0 29.9z"
+                                    ></path></g
+                                ></g
+                            >
+                        </svg>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            >Curso de HTML</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >Midudev</span
+                        >
+                    </div>
+                </a>
+
+                <a
+                    href={TituloBigData}
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
+                >
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 group-hover/item:scale-110 transition-transform"
+                    >
+                        <!-- Big Data SVG -->
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            class="h-9 w-auto block"
+                            fill="none"
+                            stroke="#4F46E5"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                            <path d="M3 5v4c0 1.657 4.03 3 9 3s9-1.343 9-3V5"
+                            ></path>
+                            <path d="M3 9v4c0 1.657 4.03 3 9 3s9-1.343 9-3V9"
+                            ></path>
+                            <path d="M3 13v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            >Título Big Data</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >Formación oficial</span
+                        >
+                    </div>
+                </a>
+                <a
+                    href={TituloCiber}
+                    target="_blank"
+                    class="flex items-center gap-4 p-4 rounded-3xl bg-white/50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 transition-all duration-300 hover:bg-white dark:hover:bg-slate-800 hover:scale-[1.02] hover:shadow-lg group/item overflow-hidden"
+                >
+                    <div
+                        class="flex-shrink-0 p-2 rounded-xl bg-slate-100 dark:bg-slate-700/50 group-hover/item:scale-110 transition-transform"
+                    >
+                        <!-- Ciberseguridad SVG (escudo) -->
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            class="h-9 w-auto block"
+                            fill="none"
+                            stroke="#374151"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                            ></path>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <span
+                            class="font-bold text-slate-800 dark:text-slate-200 text-sm truncate"
+                            >Título Ciber Seguridad</span
+                        >
+                        <span
+                            class="text-xs text-slate-500 dark:text-slate-400 truncate"
+                            >Formación oficial</span
+                        >
+                    </div>
+                </a>
             </div>
         </div>
+        <div class="flex items-center justify-center gap-3 mt-2">
+        <!-- Flecha izquierda -->
+        <button
+            aria-label="Anterior"
+            onclick="document.getElementById('cert-carousel').scrollBy({left: -document.getElementById('cert-carousel').clientWidth, behavior: 'smooth'})"
+            class="p-2 rounded-full bg-white dark:bg-slate-800 shadow-sm hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors border border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-300"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+        </button>
+
+        <!-- Dots -->
+        <div id="carousel-dots" class="flex items-center gap-2">
+            <div class="h-1.5 w-6 rounded-full bg-blue-600 transition-all duration-300"></div>
+            <div class="h-1.5 w-1.5 rounded-full bg-slate-300 dark:bg-slate-700 transition-all duration-300"></div>
+            <div class="h-1.5 w-1.5 rounded-full bg-slate-300 dark:bg-slate-700 transition-all duration-300"></div>
+        </div>
+
+        <!-- Flecha derecha -->
+        <button
+            aria-label="Siguiente"
+            onclick="document.getElementById('cert-carousel').scrollBy({left: document.getElementById('cert-carousel').clientWidth, behavior: 'smooth'})"
+            class="p-2 rounded-full bg-white dark:bg-slate-800 shadow-sm hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors border border-slate-100 dark:border-slate-700 text-slate-600 dark:text-slate-300"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+        </button>
     </div>
+    </div>
+
+    
 </div>
+
+<style>
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
+<script>
+    const carousel = document.getElementById("cert-carousel");
+    const dots = document.querySelectorAll("#carousel-dots div");
+
+    if (carousel) {
+        carousel.addEventListener("scroll", () => {
+            const activeIndex = Math.round(
+                carousel.scrollLeft / carousel.clientWidth,
+            );
+            dots.forEach((dot, index) => {
+                if (index === activeIndex) {
+                    dot.classList.add("bg-blue-600", "w-6");
+                    dot.classList.remove(
+                        "bg-slate-300",
+                        "dark:bg-slate-700",
+                        "w-1.5",
+                    );
+                } else {
+                    dot.classList.remove("bg-blue-600", "w-6");
+                    dot.classList.add(
+                        "bg-slate-300",
+                        "dark:bg-slate-700",
+                        "w-1.5",
+                    );
+                }
+            });
+        });
+    }
+</script>
