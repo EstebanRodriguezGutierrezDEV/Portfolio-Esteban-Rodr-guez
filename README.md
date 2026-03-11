@@ -1,6 +1,6 @@
 # Portfolio - Esteban Rodríguez Gutiérrez
 
-Bienvenido al repositorio de mi portafolio profesional. Este proyecto muestra mis habilidades, experiencia y proyectos como Desarrollador Full Stack
+Bienvenido al repositorio de mi portafolio profesional. Este proyecto muestra mis habilidades, experiencia y proyectos como Desarrollador Full Stack.
 ## 🚀 Tecnologías
 
 Este portafolio está construido con tecnologías modernas para asegurar rendimiento y escalabilidad:
