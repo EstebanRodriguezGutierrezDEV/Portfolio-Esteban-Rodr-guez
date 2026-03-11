@@ -40,3 +40,15 @@ Desktop.ini
 *.temp
 *.swp
 .DS_Store
+
+# Astro cache
+.cache/
+
+# Local environment files
+.env.local
+.env.*.local
+
+# build tools
+.vscode/
+.idea/
+
