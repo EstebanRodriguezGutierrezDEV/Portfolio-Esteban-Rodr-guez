@@ -10,8 +10,9 @@ import WoWCapture from "../assets/images/captura.png";
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css"
 />
-<div
+<section
     class="group/card w-full h-fit transition-all duration-300 hover:scale-[1.01]"
+    aria-label="Proyectos"
 >
     <!-- macOS Monitor/Screen Container -->
     <div
@@ -36,16 +37,18 @@ import WoWCapture from "../assets/images/captura.png";
         <div
             class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0 opacity-10"
         >
-            <h1
+            <span
                 class="text-9xl font-black text-black dark:text-white tracking-tighter uppercase leading-none"
+                aria-hidden="true"
             >
                 Proyectos
-            </h1>
-            <h2
+            </span>
+            <span
                 class="text-8xl font-black text-black dark:text-white tracking-tighter uppercase leading-none"
+                aria-hidden="true"
             >
                 Esteban
-            </h2>
+            </span>
         </div>
 
         <div
@@ -58,8 +61,10 @@ import WoWCapture from "../assets/images/captura.png";
             <div class="flex items-center gap-4">
                 <img
                     src={UserPhoto.src}
-                    alt="User"
+                    alt="Foto de Esteban Rodríguez"
                     class="w-4 h-4 rounded-full object-cover shadow-sm"
+                    width="16"
+                    height="16"
                 />
                 <span class="font-bold" data-i18n="projects.topbar.title"
                     >Proyectos Esteban</span
@@ -261,6 +266,7 @@ import WoWCapture from "../assets/images/captura.png";
                                 src={AppLogo.src}
                                 alt="MyMenu"
                                 class="w-full h-full object-cover"
+                                loading="lazy"
                             />
                         </div>
                         <span
@@ -284,6 +290,7 @@ import WoWCapture from "../assets/images/captura.png";
                                 src={GuildLogo.src}
                                 alt="WoW Guild"
                                 class="w-full h-full object-cover"
+                                loading="lazy"
                             />
                         </div>
                         <span
@@ -317,6 +324,7 @@ import WoWCapture from "../assets/images/captura.png";
                                     src={AppLogo.src}
                                     alt="MyMenu"
                                     class="w-full h-full object-cover"
+                                    loading="lazy"
                                 />
                             </div>
                             <span
@@ -336,6 +344,7 @@ import WoWCapture from "../assets/images/captura.png";
                                     src={GuildLogo.src}
                                     alt="WoW Guild"
                                     class="w-full h-full object-cover"
+                                    loading="lazy"
                                 />
                             </div>
                             <span
@@ -382,6 +391,7 @@ import WoWCapture from "../assets/images/captura.png";
                                     src={MyMenuPreview.src}
                                     alt="MyMenu Preview"
                                     class="w-auto h-auto max-w-full max-h-[40vh] object-contain rounded-2xl shadow-2xl shadow-green-900/20 border border-slate-200 dark:border-white/10 transform hover:scale-[1.02] transition-transform duration-500"
+                                    loading="lazy"
                                 />
                             </div>
 
@@ -417,6 +427,9 @@ import WoWCapture from "../assets/images/captura.png";
                                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
                                                 alt="Flutter"
                                                 class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                                loading="lazy"
+                                                width="24"
+                                                height="24"
                                             />
                                         </div>
                                         <div
@@ -427,6 +440,9 @@ import WoWCapture from "../assets/images/captura.png";
                                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
                                                 alt="Dart"
                                                 class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                                loading="lazy"
+                                                width="24"
+                                                height="24"
                                             />
                                         </div>
                                         <div
@@ -437,6 +453,9 @@ import WoWCapture from "../assets/images/captura.png";
                                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
                                                 alt="Supabase"
                                                 class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                                loading="lazy"
+                                                width="24"
+                                                height="24"
                                             />
                                         </div>
                                         <div
@@ -447,6 +466,9 @@ import WoWCapture from "../assets/images/captura.png";
                                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
                                                 alt="Firebase"
                                                 class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                                loading="lazy"
+                                                width="24"
+                                                height="24"
                                             />
                                         </div>
                                     </div>
@@ -556,6 +578,7 @@ import WoWCapture from "../assets/images/captura.png";
                                             src={WoWCapture.src}
                                             alt="WoW Guild Preview"
                                             class="w-full h-full object-cover"
+                                            loading="lazy"
                                         />
                                     </div>
                                 </div>
@@ -597,6 +620,9 @@ import WoWCapture from "../assets/images/captura.png";
                                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg"
                                                 alt="Astro"
                                                 class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                                loading="lazy"
+                                                width="24"
+                                                height="24"
                                             />
                                         </div>
                                         <div
@@ -607,6 +633,9 @@ import WoWCapture from "../assets/images/captura.png";
                                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
                                                 alt="TypeScript"
                                                 class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                                loading="lazy"
+                                                width="24"
+                                                height="24"
                                             />
                                         </div>
                                         <div
@@ -617,6 +646,9 @@ import WoWCapture from "../assets/images/captura.png";
                                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
                                                 alt="Node.js"
                                                 class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                                loading="lazy"
+                                                width="24"
+                                                height="24"
                                             />
                                         </div>
                                     </div>
@@ -1269,7 +1301,7 @@ import WoWCapture from "../assets/images/captura.png";
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <style>
     .no-scrollbar::-webkit-scrollbar {

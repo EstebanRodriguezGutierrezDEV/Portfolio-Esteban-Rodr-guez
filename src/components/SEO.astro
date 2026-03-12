@@ -10,29 +10,59 @@ const {
     title,
     description,
     image = "/assets/icono.png",
-    url = "https://estebanrodriguez.dev",
+    url = "https://estebanrg.dev",
 } = Astro.props;
 
-const siteUrl = new URL(url, Astro.site);
+const siteUrl = new URL(url, Astro.site || "https://estebanrg.dev");
 const imageUrl = new URL(image, Astro.site || siteUrl);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || siteUrl);
 
 const jsonLD = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Esteban Rodríguez Gutiérrez",
-    url: siteUrl,
-    image: imageUrl,
-    jobTitle: "Desarrollador Web Junior & Full Stack",
-    worksFor: {
-        "@type": "Organization",
-        name: "Freelance",
-    },
-    sameAs: [
-        "https://www.linkedin.com/in/esteban-rodríguez-gutiérrez-492153202/",
-        "https://github.com/EstebanRodriguezGutierrezDEV",
-        "https://www.instagram.com/_esteban_rg/",
-    ],
-    description: description,
+    "@graph": [
+        {
+            "@type": "Person",
+            "@id": "https://estebanrg.dev/#person",
+            name: "Esteban Rodríguez Gutiérrez",
+            url: "https://estebanrg.dev",
+            image: imageUrl,
+            jobTitle: ["Desarrollador Web Junior", "Full Stack Developer"],
+            worksFor: {
+                "@type": "Organization",
+                name: "Freelance",
+            },
+            sameAs: [
+                "https://www.linkedin.com/in/esteban-rodr%C3%ADguez-guti%C3%A9rrez-492153202/",
+                "https://github.com/EstebanRodriguezGutierrezDEV",
+                "https://www.instagram.com/_esteban_rg/",
+            ],
+            description: description,
+            knowsAbout: [
+                "Desarrollo Web",
+                "Frontend",
+                "Backend",
+                "JavaScript",
+                "TypeScript",
+                "React",
+                "Astro",
+                "Java",
+                "Python"
+            ],
+            alumniOf: {
+                "@type": "EducationalOrganization",
+                name: "CES Juan Pablo II"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://estebanrg.dev/#website",
+            url: "https://estebanrg.dev",
+            name: "Esteban Rodríguez - Portfolio",
+            publisher: {
+                "@id": "https://estebanrg.dev/#person"
+            }
+        }
+    ]
 };
 ---
 
@@ -40,6 +70,10 @@ const jsonLD = {
 <meta name="viewport" content="width=device-width" />
 <link rel="icon" type="image/png" href="/icono.png" />
 <meta name="generator" content={Astro.generator} />
+
+<link rel="canonical" href={canonicalURL} />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 
 <title>{title}</title>
 <meta name="title" content={title} />
@@ -55,6 +89,8 @@ const jsonLD = {
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={imageUrl} />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:site_name" content="Esteban Rodríguez - Portfolio" />
 
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={siteUrl} />

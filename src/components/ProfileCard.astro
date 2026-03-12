@@ -14,7 +14,7 @@ import profileImage from "../assets/images/Yo.png";
     >
       <img
         src={profileImage.src}
-        alt="Profile"
+        alt="Foto de perfil de Esteban Rodríguez Gutiérrez"
         class="w-full h-full object-cover"
       />
     </div>
@@ -65,6 +65,9 @@ import profileImage from "../assets/images/Yo.png";
     >
       <a
         href="https://www.instagram.com/_esteban_rg/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Perfil de Instagram"
         class="hover:text-pink-600 transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(219,39,119,0.8)]"
         ><svg
           width="24"
@@ -75,6 +78,7 @@ import profileImage from "../assets/images/Yo.png";
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
+          aria-hidden="true"
           ><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path
             d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line
             x1="17.5"
@@ -85,6 +89,7 @@ import profileImage from "../assets/images/Yo.png";
       </a>
       <a
         href="mailto:estebanrodriguezgutierrez.dev@gmail.com"
+        aria-label="Enviar correo electrónico"
         class="hover:text-red-500 transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]"
         ><svg
           width="24"
@@ -93,12 +98,16 @@ import profileImage from "../assets/images/Yo.png";
           fill="none"
           stroke="currentColor"
           stroke-width="2"
+          aria-hidden="true"
           ><rect width="20" height="16" x="2" y="4" rx="2"></rect><path
             d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
         ></a
       >
       <a
         href="https://github.com/EstebanRodriguezGutierrezDEV"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Perfil de GitHub"
         class="hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(0,0,0,0.8)] dark:hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
         ><svg
           width="24"
@@ -107,13 +116,17 @@ import profileImage from "../assets/images/Yo.png";
           fill="none"
           stroke="currentColor"
           stroke-width="2"
+          aria-hidden="true"
           ><path
             d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
           ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
         ></a
       >
       <a
-        href="https://www.linkedin.com/in/esteban-rodríguez-gutiérrez-492153202/"
+        href="https://www.linkedin.com/in/esteban-rodr%C3%ADguez-guti%C3%A9rrez-492153202/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Perfil de LinkedIn"
         class="hover:text-blue-600 transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(37,99,235,0.8)]"
         ><svg
           width="24"
@@ -122,6 +135,7 @@ import profileImage from "../assets/images/Yo.png";
           fill="none"
           stroke="currentColor"
           stroke-width="2"
+          aria-hidden="true"
           ><path
             d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
           ></path>
@@ -190,7 +204,7 @@ import profileImage from "../assets/images/Yo.png";
         >
       </button>
       <a
-        href="/assets/pdf/CV_Esteban_Rodriguez.pdf"
+        href="/assets/pdf/CV-Esteban.pdf"
         target="_blank"
         rel="noopener noreferrer"
         class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 hover:scale-[1.02] w-full text-left text-slate-700 dark:text-slate-200 group"
@@ -208,12 +222,19 @@ import profileImage from "../assets/images/Yo.png";
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            ><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline
-              points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line
-              x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg
+            ><path
+              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+            ></path><polyline points="14 2 14 8 20 8"></polyline><line
+              x1="16"
+              y1="13"
+              x2="8"
+              y2="13"></line><line x1="16" y1="17" x2="8" y2="17"
+            ></line><polyline points="10 9 9 9 8 9"></polyline></svg
           >
         </div>
-        <span class="font-medium text-sm" data-i18n="profile.options.cv">Ver CV</span>
+        <span class="font-medium text-sm" data-i18n="profile.options.cv"
+          >Ver CV</span
+        >
       </a>
       <a
         href="mailto:estebanrodriguezgutierrez.dev@gmail.com"
@@ -344,6 +365,7 @@ import profileImage from "../assets/images/Yo.png";
   <div class="flex items-center gap-4 mt-4 px-2">
     <button
       id="theme-toggle"
+      aria-label="Cambiar tema"
       class="bg-white p-3 rounded-full hover:bg-gray-100 border border-gray-100 shadow-sm transition-colors cursor-pointer dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700"
     >
       <!-- Moon Icon (shows in light mode) -->
@@ -418,9 +440,13 @@ import profileImage from "../assets/images/Yo.png";
         stroke-linecap="round"
         stroke-linejoin="round"
         class="text-slate-800 dark:text-white"
-        ><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline
-          points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line
-          x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg
+        ><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+        ></path><polyline points="14 2 14 8 20 8"></polyline><line
+          x1="16"
+          y1="13"
+          x2="8"
+          y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline
+          points="10 9 9 9 8 9"></polyline></svg
       >
     </a>
   </div>

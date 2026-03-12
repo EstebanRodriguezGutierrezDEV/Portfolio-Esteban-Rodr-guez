@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /_astro/
 
-Sitemap: https://estebanrg.dev/sitemap.xml
+Sitemap: https://estebanrg.dev/sitemap-index.xml

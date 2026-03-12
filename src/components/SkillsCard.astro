@@ -70,8 +70,9 @@ const skillCategories = [
 ];
 ---
 
-<div
+<section
     class="group/card bg-slate-50 dark:bg-slate-900 rounded-[3rem] p-6 sm:p-8 w-full flex flex-col gap-8 transition-all duration-300 h-fit hover:scale-[1.01]"
+    aria-label="Habilidades técnicas"
 >
     <h2
         class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent text-center sm:text-left relative w-fit mx-auto sm:mx-0"
@@ -107,6 +108,8 @@ const skillCategories = [
                                         class="w-8 h-8 shrink-0 object-contain"
                                         title={skill.name}
                                         loading="lazy"
+                                        width="32"
+                                        height="32"
                                         onerror="this.style.display='none'"
                                     />
                                 </div>
@@ -120,7 +123,7 @@ const skillCategories = [
             ))
         }
     </div>
-</div>
+</section>
 
 <style>
     @keyframes pop-in {
