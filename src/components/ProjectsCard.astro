@@ -5,6 +5,7 @@ import MyMenuPreview from "../assets/images/MyMenuPreview.png";
 import GuildLogo from "../assets/images/LogoGuild.png";
 import WoWCapture from "../assets/images/captura.png";
 import PokedexPreview from "../assets/images/pokemon.png";
+import PasscraftPreview from "../assets/images/pass.png";
 ---
 
 <link
@@ -338,6 +339,32 @@ import PokedexPreview from "../assets/images/pokemon.png";
                             >NEW</span
                         >
                     </div>
+                    <div
+                        id="sidebar-passcraft"
+                        class="flex items-center gap-2 px-2 py-1.5 bg-white/40 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-sm rounded-lg text-slate-700 dark:text-white text-xs cursor-pointer hover:bg-white/60 dark:hover:bg-white/10 hover:scale-[1.02] transition-all duration-200 group/passcraft mt-2"
+                        onclick="showView('passcraft')"
+                    >
+                        <div
+                            class="w-4 h-4 rounded-md overflow-hidden shadow-sm group-hover/passcraft:scale-110 transition-transform flex items-center justify-center"
+                        >
+                            <svg viewBox="0 0 24 24" class="w-full h-full" fill="none" stroke="#8B5CF6" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                                <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                                <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                                <rect x="14" y="14" width="3" height="3"></rect>
+                                <rect x="18" y="18" width="3" height="3"></rect>
+                                <rect x="14" y="18" width="3" height="3"></rect>
+                            </svg>
+                        </div>
+                        <span
+                            class="font-medium group-hover/passcraft:text-violet-600 dark:group-hover/passcraft:text-violet-400 transition-colors"
+                            >PASSCRAFT</span
+                        >
+                        <span
+                            class="ml-auto text-[9px] font-bold text-white bg-gradient-to-r from-violet-500 to-purple-600 px-1.5 py-0.5 rounded-full shadow-sm"
+                            >NEW</span
+                        >
+                    </div>
                 </div>
 
                 <!-- Main Area -->
@@ -434,6 +461,28 @@ import PokedexPreview from "../assets/images/pokemon.png";
                             <span
                                 class="text-xs font-medium text-slate-600 dark:text-slate-300 group-hover/app:text-red-600 dark:group-hover/app:text-red-400 text-center leading-tight select-none"
                                 >Pokédex</span
+                            >
+                        </div>
+                        <!-- PASSCRAFT Shortcut -->
+                        <div
+                            class="absolute top-28 left-32 flex flex-col items-center gap-2 cursor-pointer group/app p-2 rounded-xl hover:bg-violet-50 dark:hover:bg-white/5 transition-colors w-24"
+                            onclick="showView('passcraft')"
+                        >
+                            <div
+                                class="w-14 h-14 rounded-2xl overflow-hidden shadow-md group-hover/app:shadow-lg transition-all duration-300 group-hover/app:-translate-y-1 pointer-events-none bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center"
+                            >
+                                <svg viewBox="0 0 24 24" class="w-8 h-8" fill="none" stroke="white" stroke-width="1.5">
+                                    <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                                    <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                                    <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                                    <rect x="14" y="14" width="3" height="3"></rect>
+                                    <rect x="18" y="18" width="3" height="3"></rect>
+                                    <rect x="14" y="18" width="3" height="3"></rect>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-xs font-medium text-slate-600 dark:text-slate-300 group-hover/app:text-violet-600 dark:group-hover/app:text-violet-400 text-center leading-tight select-none"
+                                >PASSCRAFT</span
                             >
                         </div>
                     </div>
@@ -910,6 +959,179 @@ import PokedexPreview from "../assets/images/pokemon.png";
                             </div>
                         </div>
                     </div>
+
+                    <!-- PASSCRAFT View -->
+                    <div
+                        id="passcraft-view"
+                        class="hidden w-full h-full flex-col overflow-y-auto no-scrollbar relative"
+                        style="container-type: inline-size;"
+                    >
+                        <!-- Background Blob -->
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80cqi] h-[80cqi] max-w-[500px] max-h-[500px] bg-violet-500/10 rounded-full blur-[100px] pointer-events-none"
+                        >
+                        </div>
+
+                        <div
+                            class="w-full my-auto flex flex-col items-center gap-[4cqi] p-[5cqi] relative z-10"
+                        >
+                            <!-- Header Section -->
+                            <div class="text-center space-y-1 shrink-0">
+                                <h3
+                                    class="font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-500 dark:from-violet-400 dark:to-purple-300 tracking-tight leading-tight"
+                                    style="font-size: clamp(1.5rem, 10cqi, 3rem);"
+                                >
+                                    PASSCRAFT
+                                </h3>
+                                <p
+                                    class="font-medium text-slate-700 dark:text-slate-200"
+                                    style="font-size: clamp(0.875rem, 4cqi, 1.25rem);"
+                                >
+                                    Generador de Contraseñas
+                                </p>
+                            </div>
+
+                            <!-- Image Container (Mock Browser) -->
+                            <div class="w-full flex justify-center shrink">
+                                <div
+                                    class="w-auto h-auto max-w-full max-h-[40vh] rounded-xl overflow-hidden shadow-2xl shadow-violet-900/20 border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-800 transform hover:scale-[1.02] transition-transform duration-500 flex flex-col"
+                                >
+                                    <!-- Browser Toolbar -->
+                                    <div
+                                        class="h-8 bg-slate-100 dark:bg-slate-700 border-b border-slate-200 dark:border-slate-600 flex items-center px-4 gap-4 shrink-0"
+                                    >
+                                        <div class="flex gap-1.5">
+                                            <div
+                                                class="w-2.5 h-2.5 rounded-full bg-red-400"
+                                            >
+                                            </div>
+                                            <div
+                                                class="w-2.5 h-2.5 rounded-full bg-amber-400"
+                                            >
+                                            </div>
+                                            <div
+                                                class="w-2.5 h-2.5 rounded-full bg-green-400"
+                                            >
+                                            </div>
+                                        </div>
+                                        <!-- Address Bar -->
+                                        <div
+                                            class="flex-1 h-5 bg-white dark:bg-slate-800 rounded-md border border-slate-200 dark:border-slate-600 flex items-center px-3 gap-2"
+                                        >
+                                            <svg
+                                                class="w-3 h-3 text-slate-400"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                ><circle cx="11" cy="11" r="8"
+                                                ></circle><path
+                                                    d="m21 21-4.3-4.3"
+                                                ></path></svg
+                                            >
+                                            <span
+                                                class="text-[10px] text-slate-500 dark:text-slate-400 font-mono"
+                                                >passgchart.vercel.app</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <!-- Content -->
+                                    <div class="relative overflow-hidden group">
+                                        <img
+                                            src={PasscraftPreview.src}
+                                            alt="PASSCRAFT Preview"
+                                            class="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Description & Tech Stack -->
+                            <div
+                                class="text-center space-y-[3cqi] max-w-lg shrink-0"
+                            >
+                                <p
+                                    class="text-slate-600 dark:text-slate-300 leading-relaxed hidden sm:block"
+                                    style="font-size: clamp(0.8rem, 3.5cqi, 1.125rem);"
+                                >
+                                    Generador de contraseñas seguras con
+                                    opciones personalizables. Permite crear
+                                    contraseñas robustas ajustando longitud,
+                                    caracteres especiales, números y más.
+                                    Desarrollada con tecnologías web modernas
+                                    para una experiencia rápida y accesible.
+                                </p>
+
+                                <div
+                                    class="flex flex-col items-center gap-3 mt-2"
+                                >
+                                    <span
+                                        class="text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-400 dark:from-slate-200 dark:to-slate-400 uppercase tracking-widest"
+                                        >Herramientas utilizadas</span
+                                    >
+                                    <div
+                                        class="flex items-center justify-center gap-3 flex-wrap"
+                                    >
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-violet-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-violet-500/30 transition-all duration-300 group"
+                                            title="HTML5"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                                alt="HTML5"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-violet-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-violet-500/30 transition-all duration-300 group"
+                                            title="CSS3"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                                alt="CSS3"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-violet-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-violet-500/30 transition-all duration-300 group"
+                                            title="JavaScript"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                                alt="JavaScript"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <!-- Website Button with QR icon -->
+                                    <a
+                                        href="https://passgchart.vercel.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 mt-2"
+                                        style="font-size: clamp(0.875rem, 3.5cqi, 1rem);"
+                                    >
+                                        <svg
+                                            class="w-5 h-5"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="2"
+                                        >
+                                            <rect x="3" y="3" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                            <rect x="14" y="3" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                            <rect x="3" y="14" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                            <rect x="14" y="14" width="3" height="3" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                            <rect x="18" y="18" width="3" height="3" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                            <rect x="14" y="18" width="3" height="3" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                        </svg>
+                                        <span>Visitar Sitio Web</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1152,6 +1374,7 @@ import PokedexPreview from "../assets/images/pokemon.png";
                     const myMenuView = document.getElementById("mymenu-view");
                     const wowView = document.getElementById("wow-view");
                     const pokedexView = document.getElementById("pokedex-view");
+                    const passcraftView = document.getElementById("passcraft-view");
                     const sidebarProjects =
                         document.getElementById("sidebar-projects");
                     const sidebarMyMenu =
@@ -1159,8 +1382,10 @@ import PokedexPreview from "../assets/images/pokemon.png";
                     const sidebarWow = document.getElementById("sidebar-wow");
                     const sidebarPokedex =
                         document.getElementById("sidebar-pokedex");
+                    const sidebarPasscraft =
+                        document.getElementById("sidebar-passcraft");
 
-                    if (!desktopView || !myMenuView || !wowView || !pokedexView)
+                    if (!desktopView || !myMenuView || !wowView || !pokedexView || !passcraftView)
                         return;
 
                     // Active/Inactive classes
@@ -1184,6 +1409,7 @@ import PokedexPreview from "../assets/images/pokemon.png";
                             sidebarMyMenu,
                             sidebarWow,
                             sidebarPokedex,
+                            sidebarPasscraft,
                         ].forEach((el) => {
                             if (el) {
                                 el.classList.remove(...activeClasses);
@@ -1194,7 +1420,7 @@ import PokedexPreview from "../assets/images/pokemon.png";
 
                     // Helper to hide all views
                     const hideViews = () => {
-                        [desktopView, myMenuView, wowView, pokedexView].forEach(
+                        [desktopView, myMenuView, wowView, pokedexView, passcraftView].forEach(
                             (el) => {
                                 if (el) {
                                     el.classList.add("hidden");
@@ -1235,6 +1461,13 @@ import PokedexPreview from "../assets/images/pokemon.png";
                         if (sidebarPokedex) {
                             sidebarPokedex.classList.add(...activeClasses);
                             sidebarPokedex.classList.remove(...inactiveClasses);
+                        }
+                    } else if (viewName === "passcraft") {
+                        passcraftView.classList.remove("hidden");
+                        passcraftView.classList.add("flex");
+                        if (sidebarPasscraft) {
+                            sidebarPasscraft.classList.add(...activeClasses);
+                            sidebarPasscraft.classList.remove(...inactiveClasses);
                         }
                     }
                 }
@@ -1576,6 +1809,20 @@ import PokedexPreview from "../assets/images/pokemon.png";
                         stroke="#1e293b"
                         stroke-width="4"></circle>
                     <circle cx="50" cy="50" r="8" fill="#1e293b"></circle>
+                </svg>
+            </div>
+            <!-- PASSCRAFT Icon -->
+            <div
+                onclick="showView('passcraft'); restoreWindow()"
+                class="w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl shadow-lg border border-white/20 flex items-center justify-center group/dock-icon hover:-translate-y-2 hover:shadow-lg hover:shadow-violet-500/50 transition-all duration-300 cursor-pointer overflow-hidden"
+            >
+                <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="white" stroke-width="1.5">
+                    <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="14" width="3" height="3"></rect>
+                    <rect x="18" y="18" width="3" height="3"></rect>
+                    <rect x="14" y="18" width="3" height="3"></rect>
                 </svg>
             </div>
         </div>
