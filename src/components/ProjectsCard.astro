@@ -126,7 +126,7 @@ import PasscraftPreview from "../assets/images/pass.png";
         <!-- Floating Finder Window -->
         <div
             id="finder-window"
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[90%] sm:w-[80%] h-[65%] bg-slate-50 dark:bg-[#1e1e1e] rounded-xl overflow-hidden shadow-2xl border border-white/20 dark:border-black ring-1 ring-black/10 flex flex-col transition-all duration-300 ease-in-out"
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[90%] sm:w-[80%] h-[65%] bg-slate-50 dark:bg-[#1e1e1e] rounded-xl overflow-hidden shadow-2xl border border-white/20 dark:border-black ring-1 ring-black/10 flex flex-col transition-all duration-300 ease-in-out scale-90 opacity-0 pointer-events-none"
         >
             <!-- Title Bar -->
             <div
@@ -347,7 +347,7 @@ import PasscraftPreview from "../assets/images/pass.png";
                     class="flex-1 bg-white dark:bg-[#1e1e1e] flex flex-col items-center justify-center relative overflow-hidden"
                 >
                     <div
-                        class="hidden w-full h-full relative p-4 overflow-hidden"
+                        class="w-full h-full relative p-4 overflow-hidden"
                         id="desktop-view"
                     >
                         <!-- App Shortcut -->
@@ -446,7 +446,7 @@ import PasscraftPreview from "../assets/images/pass.png";
                     <!-- MyMenu View -->
                     <div
                         id="mymenu-view"
-                        class="flex w-full h-full flex-col overflow-y-auto no-scrollbar relative"
+                        class="hidden w-full h-full flex-col overflow-y-auto no-scrollbar relative"
                         style="container-type: inline-size;"
                     >
                         <!-- Background Blob -->
@@ -980,7 +980,7 @@ import PasscraftPreview from "../assets/images/pass.png";
                 // State
                 let isMaximized = false;
                 let isMinimized = false;
-                let isClosed = false;
+                let isClosed = true;
 
                 // DOM Elements (fetched by ID in functions to ensure existence)
 
@@ -1237,8 +1237,6 @@ import PasscraftPreview from "../assets/images/pass.png";
                 window.toggleWindow = toggleWindow;
                 window.showView = showView;
 
-                // Init: show mymenu as default active view
-                showView('mymenu');
 
                 // Drag Implementation
                 const win = document.getElementById("finder-window");
@@ -1499,7 +1497,7 @@ import PasscraftPreview from "../assets/images/pass.png";
             </script>
             <!-- Launchpad -->
             <div
-                onclick="showView('desktop')"
+                onclick="showView('desktop'); restoreWindow()"
                 class="w-10 h-10 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-xl shadow-lg border border-white/20 flex items-center justify-center group/dock-icon hover:-translate-y-2 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 cursor-pointer"
             >
                 <div
