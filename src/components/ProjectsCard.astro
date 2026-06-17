@@ -126,7 +126,7 @@ import PasscraftPreview from "../assets/images/pass.png";
         <!-- Floating Finder Window -->
         <div
             id="finder-window"
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[90%] sm:w-[80%] h-[65%] bg-slate-50 dark:bg-[#1e1e1e] rounded-xl overflow-hidden shadow-2xl border border-white/20 dark:border-black ring-1 ring-black/10 flex flex-col transition-all duration-300 ease-in-out scale-90 opacity-0 pointer-events-none"
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[90%] sm:w-[80%] h-[65%] bg-slate-50 dark:bg-[#1e1e1e] rounded-xl overflow-hidden shadow-2xl border border-white/20 dark:border-black ring-1 ring-black/10 flex flex-col transition-all duration-300 ease-in-out"
         >
             <!-- Title Bar -->
             <div
@@ -347,13 +347,13 @@ import PasscraftPreview from "../assets/images/pass.png";
                     class="flex-1 bg-white dark:bg-[#1e1e1e] flex flex-col items-center justify-center relative overflow-hidden"
                 >
                     <div
-                        class="w-full h-full relative p-4 overflow-hidden"
+                        class="hidden w-full h-full relative p-4 overflow-hidden"
                         id="desktop-view"
                     >
                         <!-- App Shortcut -->
                         <div
                             class="absolute top-4 left-4 flex flex-col items-center gap-2 cursor-pointer group/app p-2 rounded-xl hover:bg-blue-50 dark:hover:bg-white/5 transition-colors w-24"
-                            onmousedown="initDragApp(event, this)"
+                            onclick="showView('mymenu')"
                         >
                             <div
                                 class="w-14 h-14 rounded-2xl overflow-hidden shadow-md group-hover/app:shadow-lg transition-all duration-300 group-hover/app:-translate-y-1 pointer-events-none"
@@ -446,7 +446,7 @@ import PasscraftPreview from "../assets/images/pass.png";
                     <!-- MyMenu View -->
                     <div
                         id="mymenu-view"
-                        class="hidden w-full h-full flex-col overflow-y-auto no-scrollbar relative"
+                        class="flex w-full h-full flex-col overflow-y-auto no-scrollbar relative"
                         style="container-type: inline-size;"
                     >
                         <!-- Background Blob -->
@@ -980,7 +980,7 @@ import PasscraftPreview from "../assets/images/pass.png";
                 // State
                 let isMaximized = false;
                 let isMinimized = false;
-                let isClosed = true;
+                let isClosed = false;
 
                 // DOM Elements (fetched by ID in functions to ensure existence)
 
@@ -1155,23 +1155,16 @@ import PasscraftPreview from "../assets/images/pass.png";
                 function showView(viewName) {
                     const desktopView = document.getElementById("desktop-view");
                     const myMenuView = document.getElementById("mymenu-view");
-                    const wowView = document.getElementById("wow-view");
                     const pokedexView = document.getElementById("pokedex-view");
                     const passcraftView = document.getElementById("passcraft-view");
-                    const sidebarProjects =
-                        document.getElementById("sidebar-projects");
-                    const sidebarMyMenu =
-                        document.getElementById("sidebar-mymenu");
-                    const sidebarWow = document.getElementById("sidebar-wow");
-                    const sidebarPokedex =
-                        document.getElementById("sidebar-pokedex");
-                    const sidebarPasscraft =
-                        document.getElementById("sidebar-passcraft");
+                    const sidebarProjects = document.getElementById("sidebar-projects");
+                    const sidebarMyMenu = document.getElementById("sidebar-mymenu");
+                    const sidebarPokedex = document.getElementById("sidebar-pokedex");
+                    const sidebarPasscraft = document.getElementById("sidebar-passcraft");
 
-                    if (!desktopView || !myMenuView || !wowView || !pokedexView || !passcraftView)
+                    if (!desktopView || !myMenuView || !pokedexView || !passcraftView)
                         return;
 
-                    // Active/Inactive classes
                     const activeClasses = [
                         "bg-slate-200/50",
                         "dark:bg-white/10",
@@ -1185,15 +1178,8 @@ import PasscraftPreview from "../assets/images/pass.png";
                         "dark:hover:bg-white/5",
                     ];
 
-                    // Helper to reset all sidebars
                     const resetSidebars = () => {
-                        [
-                            sidebarProjects,
-                            sidebarMyMenu,
-                            sidebarWow,
-                            sidebarPokedex,
-                            sidebarPasscraft,
-                        ].forEach((el) => {
+                        [sidebarProjects, sidebarMyMenu, sidebarPokedex, sidebarPasscraft].forEach((el) => {
                             if (el) {
                                 el.classList.remove(...activeClasses);
                                 el.classList.add(...inactiveClasses);
@@ -1201,16 +1187,13 @@ import PasscraftPreview from "../assets/images/pass.png";
                         });
                     };
 
-                    // Helper to hide all views
                     const hideViews = () => {
-                        [desktopView, myMenuView, wowView, pokedexView, passcraftView].forEach(
-                            (el) => {
-                                if (el) {
-                                    el.classList.add("hidden");
-                                    el.classList.remove("flex");
-                                }
-                            },
-                        );
+                        [desktopView, myMenuView, pokedexView, passcraftView].forEach((el) => {
+                            if (el) {
+                                el.classList.add("hidden");
+                                el.classList.remove("flex");
+                            }
+                        });
                     };
 
                     hideViews();
@@ -1220,9 +1203,7 @@ import PasscraftPreview from "../assets/images/pass.png";
                         desktopView.classList.remove("hidden");
                         if (sidebarProjects) {
                             sidebarProjects.classList.add(...activeClasses);
-                            sidebarProjects.classList.remove(
-                                ...inactiveClasses,
-                            );
+                            sidebarProjects.classList.remove(...inactiveClasses);
                         }
                     } else if (viewName === "mymenu") {
                         myMenuView.classList.remove("hidden");
@@ -1230,13 +1211,6 @@ import PasscraftPreview from "../assets/images/pass.png";
                         if (sidebarMyMenu) {
                             sidebarMyMenu.classList.add(...activeClasses);
                             sidebarMyMenu.classList.remove(...inactiveClasses);
-                        }
-                    } else if (viewName === "wow") {
-                        wowView.classList.remove("hidden");
-                        wowView.classList.add("flex");
-                        if (sidebarWow) {
-                            sidebarWow.classList.add(...activeClasses);
-                            sidebarWow.classList.remove(...inactiveClasses);
                         }
                     } else if (viewName === "pokedex") {
                         pokedexView.classList.remove("hidden");
@@ -1262,6 +1236,9 @@ import PasscraftPreview from "../assets/images/pass.png";
                 window.restoreWindow = restoreWindow;
                 window.toggleWindow = toggleWindow;
                 window.showView = showView;
+
+                // Init: show mymenu as default active view
+                showView('mymenu');
 
                 // Drag Implementation
                 const win = document.getElementById("finder-window");
@@ -1522,7 +1499,7 @@ import PasscraftPreview from "../assets/images/pass.png";
             </script>
             <!-- Launchpad -->
             <div
-                onclick="toggleWindow()"
+                onclick="showView('desktop')"
                 class="w-10 h-10 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-xl shadow-lg border border-white/20 flex items-center justify-center group/dock-icon hover:-translate-y-2 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 cursor-pointer"
             >
                 <div
@@ -1541,7 +1518,7 @@ import PasscraftPreview from "../assets/images/pass.png";
             </div>
             <!-- App Icon -->
             <div
-                onclick="toggleWindow()"
+                onclick="showView('mymenu'); restoreWindow()"
                 class="w-10 h-10 bg-white/10 rounded-xl shadow-lg border border-white/20 flex items-center justify-center group/dock-icon hover:-translate-y-2 transition-transform duration-300 cursor-pointer overflow-hidden"
             >
                 <img
