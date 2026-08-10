@@ -4,6 +4,7 @@ import AppLogo from "../assets/images/AppLogoNew.jpg";
 import MyMenuPreview from "../assets/images/MyMenuPreview.png";
 import PokedexPreview from "../assets/images/pokemon.png";
 import PasscraftPreview from "../assets/images/pass.png";
+import VerdeAhorroPreview from "../assets/images/verdeahorro.png";
 ---
 
 <link
@@ -340,6 +341,25 @@ import PasscraftPreview from "../assets/images/pass.png";
                             >NEW</span
                         >
                     </div>
+                    <div
+                        id="sidebar-verdeahorro"
+                        class="flex items-center gap-2 px-2 py-1.5 bg-white/40 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-sm rounded-lg text-slate-700 dark:text-white text-xs cursor-pointer hover:bg-white/60 dark:hover:bg-white/10 hover:scale-[1.02] transition-all duration-200 group/verdeahorro mt-2"
+                        onclick="showView('verdeahorro')"
+                    >
+                        <div
+                            class="w-4 h-4 rounded-md overflow-hidden shadow-sm group-hover/verdeahorro:scale-110 transition-transform flex items-center justify-center bg-green-100"
+                        >
+                            <span class="text-green-600 font-bold text-[10px]">$</span>
+                        </div>
+                        <span
+                            class="font-medium group-hover/verdeahorro:text-green-600 dark:group-hover/verdeahorro:text-green-400 transition-colors"
+                            >VerdeAhorro</span
+                        >
+                        <span
+                            class="ml-auto text-[9px] font-bold text-white bg-gradient-to-r from-green-500 to-emerald-600 px-1.5 py-0.5 rounded-full shadow-sm"
+                            >NEW</span
+                        >
+                    </div>
                 </div>
 
                 <!-- Main Area -->
@@ -439,6 +459,21 @@ import PasscraftPreview from "../assets/images/pass.png";
                             <span
                                 class="text-xs font-medium text-slate-600 dark:text-slate-300 group-hover/app:text-violet-600 dark:group-hover/app:text-violet-400 text-center leading-tight select-none"
                                 >PASSCRAFT</span
+                            >
+                        </div>
+                        <!-- VerdeAhorro Shortcut -->
+                        <div
+                            class="absolute top-28 left-60 flex flex-col items-center gap-2 cursor-pointer group/app p-2 rounded-xl hover:bg-green-50 dark:hover:bg-white/5 transition-colors w-24"
+                            onclick="showView('verdeahorro')"
+                        >
+                            <div
+                                class="w-14 h-14 rounded-2xl overflow-hidden shadow-md group-hover/app:shadow-lg transition-all duration-300 group-hover/app:-translate-y-1 pointer-events-none bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center"
+                            >
+                                <span class="text-white font-bold text-3xl">$</span>
+                            </div>
+                            <span
+                                class="text-xs font-medium text-slate-600 dark:text-slate-300 group-hover/app:text-green-600 dark:group-hover/app:text-green-400 text-center leading-tight select-none"
+                                >VerdeAhorro</span
                             >
                         </div>
                     </div>
@@ -632,17 +667,12 @@ import PasscraftPreview from "../assets/images/pass.png";
                                         <div
                                             class="flex-1 h-5 bg-white dark:bg-slate-800 rounded-md border border-slate-200 dark:border-slate-600 flex items-center px-3 gap-2"
                                         >
-                                            <svg
-                                                class="w-3 h-3 text-slate-400"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                ><circle cx="11" cy="11" r="8"
-                                                ></circle><path
-                                                    d="m21 21-4.3-4.3"
-                                                ></path></svg
-                                            >
+                                            <svg viewBox="0 0 100 100" class="w-3 h-3 text-red-500">
+                                                <circle cx="50" cy="50" r="48" fill="transparent" stroke="currentColor" stroke-width="8"></circle>
+                                                <rect x="2" y="46" width="96" height="8" fill="currentColor"></rect>
+                                                <circle cx="50" cy="50" r="16" fill="transparent" stroke="currentColor" stroke-width="8"></circle>
+                                                <circle cx="50" cy="50" r="8" fill="currentColor"></circle>
+                                            </svg>
                                             <span
                                                 class="text-[10px] text-slate-500 dark:text-slate-400 font-mono"
                                                 >pokedex-gen1.app</span
@@ -801,17 +831,14 @@ import PasscraftPreview from "../assets/images/pass.png";
                                         <div
                                             class="flex-1 h-5 bg-white dark:bg-slate-800 rounded-md border border-slate-200 dark:border-slate-600 flex items-center px-3 gap-2"
                                         >
-                                            <svg
-                                                class="w-3 h-3 text-slate-400"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                ><circle cx="11" cy="11" r="8"
-                                                ></circle><path
-                                                    d="m21 21-4.3-4.3"
-                                                ></path></svg
-                                            >
+                                            <svg viewBox="0 0 24 24" class="w-3 h-3 text-violet-500" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                                                <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                                                <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                                                <rect x="14" y="14" width="3" height="3"></rect>
+                                                <rect x="18" y="18" width="3" height="3"></rect>
+                                                <rect x="14" y="18" width="3" height="3"></rect>
+                                            </svg>
                                             <span
                                                 class="text-[10px] text-slate-500 dark:text-slate-400 font-mono"
                                                 >passgchart.vercel.app</span
@@ -893,6 +920,174 @@ import PasscraftPreview from "../assets/images/pass.png";
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 mt-2"
+                                        style="font-size: clamp(0.875rem, 3.5cqi, 1rem);"
+                                    >
+                                        <svg
+                                            class="w-5 h-5"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="2"
+                                        >
+                                            <rect x="3" y="3" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                            <rect x="14" y="3" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                            <rect x="3" y="14" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                            <rect x="14" y="14" width="3" height="3" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                            <rect x="18" y="18" width="3" height="3" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                            <rect x="14" y="18" width="3" height="3" stroke-linecap="round" stroke-linejoin="round"></rect>
+                                        </svg>
+                                        <span>Visitar Sitio Web</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VerdeAhorro View -->
+                    <div
+                        id="verdeahorro-view"
+                        class="hidden w-full h-full flex-col overflow-y-auto no-scrollbar relative"
+                        style="container-type: inline-size;"
+                    >
+                        <!-- Background Blob -->
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80cqi] h-[80cqi] max-w-[500px] max-h-[500px] bg-green-500/10 rounded-full blur-[100px] pointer-events-none"
+                        >
+                        </div>
+
+                        <div
+                            class="w-full my-auto flex flex-col items-center gap-[4cqi] p-[5cqi] relative z-10"
+                        >
+                            <!-- Header Section -->
+                            <div class="text-center space-y-1 shrink-0">
+                                <h3
+                                    class="font-black text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-600 dark:from-green-400 dark:to-emerald-300 tracking-tight leading-tight"
+                                    style="font-size: clamp(1.5rem, 10cqi, 3rem);"
+                                >
+                                    VerdeAhorro
+                                </h3>
+                                <p
+                                    class="font-medium text-slate-700 dark:text-slate-200"
+                                    style="font-size: clamp(0.875rem, 4cqi, 1.25rem);"
+                                >
+                                    Piensa en tus ahorros y como gestionar tus objetivos
+                                </p>
+                            </div>
+
+                            <!-- Image Container (Mock Browser) -->
+                            <div class="w-full flex justify-center shrink">
+                                <div
+                                    class="w-auto h-auto max-w-full max-h-[40vh] rounded-xl overflow-hidden shadow-2xl shadow-green-900/20 border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-800 transform hover:scale-[1.02] transition-transform duration-500 flex flex-col"
+                                >
+                                    <!-- Browser Toolbar -->
+                                    <div
+                                        class="h-8 bg-slate-100 dark:bg-slate-700 border-b border-slate-200 dark:border-slate-600 flex items-center px-4 gap-4 shrink-0"
+                                    >
+                                        <div class="flex gap-1.5">
+                                            <div
+                                                class="w-2.5 h-2.5 rounded-full bg-red-400"
+                                            >
+                                            </div>
+                                            <div
+                                                class="w-2.5 h-2.5 rounded-full bg-amber-400"
+                                            >
+                                            </div>
+                                            <div
+                                                class="w-2.5 h-2.5 rounded-full bg-green-400"
+                                            >
+                                            </div>
+                                        </div>
+                                        <!-- Address Bar -->
+                                        <div
+                                            class="flex-1 h-5 bg-white dark:bg-slate-800 rounded-md border border-slate-200 dark:border-slate-600 flex items-center px-3 gap-2"
+                                        >
+                                            <span class="text-green-500 font-bold text-[10px] leading-none flex items-center justify-center w-3 h-3">$</span>
+                                            <span
+                                                class="text-[10px] text-slate-500 dark:text-slate-400 font-mono"
+                                                >verdeahorro.vercel.app</span
+                                            >
+                                        </div>
+                                    </div>
+                                    <!-- Content -->
+                                    <div class="relative overflow-hidden group">
+                                        <img
+                                            src={VerdeAhorroPreview.src}
+                                            alt="VerdeAhorro Preview"
+                                            class="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Description & Tech Stack -->
+                            <div
+                                class="text-center space-y-[3cqi] max-w-lg shrink-0"
+                            >
+                                <p
+                                    class="text-slate-600 dark:text-slate-300 leading-relaxed hidden sm:block"
+                                    style="font-size: clamp(0.8rem, 3.5cqi, 1.125rem);"
+                                >
+                                    Aplicación web para fomentar el ahorro y poder llegar a un objetivo sabiendo lo que gastas.Obtén consejos para ahorrar dinero y lograr tus objetivos de manera eficiente.
+                                </p>
+
+                                <div
+                                    class="flex flex-col items-center gap-3 mt-2"
+                                >
+                                    <span
+                                        class="text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-400 dark:from-slate-200 dark:to-slate-400 uppercase tracking-widest"
+                                        >Herramientas utilizadas</span
+                                    >
+                                    <div
+                                        class="flex items-center justify-center gap-3 flex-wrap"
+                                    >
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-green-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-green-500/30 transition-all duration-300 group"
+                                            title="Astro"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg"
+                                                alt="Astro"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300 dark:invert"
+                                            />
+                                        </div>
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-green-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-green-500/30 transition-all duration-300 group"
+                                            title="CSS3"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                                alt="CSS3"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-green-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-green-500/30 transition-all duration-300 group"
+                                            title="JavaScript"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                                alt="JavaScript"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <div
+                                            class="p-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-green-900/5 border border-white/50 dark:border-white/10 hover:-translate-y-1 hover:shadow-green-500/30 transition-all duration-300 group"
+                                            title="Supabase"
+                                        >
+                                            <img
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                                                alt="Supabase"
+                                                class="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <!-- Website Button -->
+                                    <a
+                                        href="https://verdeahorro.vercel.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 mt-2"
                                         style="font-size: clamp(0.875rem, 3.5cqi, 1rem);"
                                     >
                                         <svg
@@ -1157,12 +1352,14 @@ import PasscraftPreview from "../assets/images/pass.png";
                     const myMenuView = document.getElementById("mymenu-view");
                     const pokedexView = document.getElementById("pokedex-view");
                     const passcraftView = document.getElementById("passcraft-view");
+                    const verdeahorroView = document.getElementById("verdeahorro-view");
                     const sidebarProjects = document.getElementById("sidebar-projects");
                     const sidebarMyMenu = document.getElementById("sidebar-mymenu");
                     const sidebarPokedex = document.getElementById("sidebar-pokedex");
                     const sidebarPasscraft = document.getElementById("sidebar-passcraft");
+                    const sidebarVerdeAhorro = document.getElementById("sidebar-verdeahorro");
 
-                    if (!desktopView || !myMenuView || !pokedexView || !passcraftView)
+                    if (!desktopView || !myMenuView || !pokedexView || !passcraftView || !verdeahorroView)
                         return;
 
                     const activeClasses = [
@@ -1179,7 +1376,7 @@ import PasscraftPreview from "../assets/images/pass.png";
                     ];
 
                     const resetSidebars = () => {
-                        [sidebarProjects, sidebarMyMenu, sidebarPokedex, sidebarPasscraft].forEach((el) => {
+                        [sidebarProjects, sidebarMyMenu, sidebarPokedex, sidebarPasscraft, sidebarVerdeAhorro].forEach((el) => {
                             if (el) {
                                 el.classList.remove(...activeClasses);
                                 el.classList.add(...inactiveClasses);
@@ -1188,7 +1385,7 @@ import PasscraftPreview from "../assets/images/pass.png";
                     };
 
                     const hideViews = () => {
-                        [desktopView, myMenuView, pokedexView, passcraftView].forEach((el) => {
+                        [desktopView, myMenuView, pokedexView, passcraftView, verdeahorroView].forEach((el) => {
                             if (el) {
                                 el.classList.add("hidden");
                                 el.classList.remove("flex");
@@ -1225,6 +1422,13 @@ import PasscraftPreview from "../assets/images/pass.png";
                         if (sidebarPasscraft) {
                             sidebarPasscraft.classList.add(...activeClasses);
                             sidebarPasscraft.classList.remove(...inactiveClasses);
+                        }
+                    } else if (viewName === "verdeahorro") {
+                        verdeahorroView.classList.remove("hidden");
+                        verdeahorroView.classList.add("flex");
+                        if (sidebarVerdeAhorro) {
+                            sidebarVerdeAhorro.classList.add(...activeClasses);
+                            sidebarVerdeAhorro.classList.remove(...inactiveClasses);
                         }
                     }
                 }
@@ -1571,6 +1775,13 @@ import PasscraftPreview from "../assets/images/pass.png";
                     <rect x="18" y="18" width="3" height="3"></rect>
                     <rect x="14" y="18" width="3" height="3"></rect>
                 </svg>
+            </div>
+            <!-- VerdeAhorro Icon -->
+            <div
+                onclick="showView('verdeahorro'); restoreWindow()"
+                class="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-600 rounded-xl shadow-lg border border-white/20 flex items-center justify-center group/dock-icon hover:-translate-y-2 hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300 cursor-pointer overflow-hidden"
+            >
+                <span class="text-white font-bold text-xl">$</span>
             </div>
         </div>
     </div>
