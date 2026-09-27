@@ -2,7 +2,7 @@ export const translations = {
     es: {
         "profile.role": "Desarrollador",
         "profile.role.highlight": "Full Stack",
-        "profile.location": "Toledo, España",
+        "profile.location": "Madrid, España",
         "profile.showOptions": "Mostrar Opciones",
         "profile.options.translate": "Translate",
         "profile.options.contact": "Contactar",
@@ -58,7 +58,7 @@ export const translations = {
     en: {
         "profile.role": "Developer",
         "profile.role.highlight": "Full Stack",
-        "profile.location": "Toledo, Spain",
+        "profile.location": "Madrid, Spain",
         "profile.showOptions": "Show Options",
         "profile.options.translate": "Traducir",
         "profile.options.contact": "Contact",
